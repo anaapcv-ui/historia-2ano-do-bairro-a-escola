@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🐶 Do Bairro à Escola — História 2º ano</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --azul:#3B6FD4;        /* azul-uniforme */
+  --azul-esc:#28519E;
+  --azul-claro:#EAF0FC;
+  --amar:#F28C28;        /* laranja-mochila */
+  --amar-esc:#C2661A;
+  --verm:#8E5BD0;        /* lilás-lembrança */
+  --verm-esc:#6A3FA6;
+  --verde:#3FA34D;       /* verde-praça */
+  --verde-esc:#2B7A36;
+  --papel:#FFF8EC;       /* creme-calçada */
+  --tinta:#2B2A3A;
+  --cinza:#7C7889;
+  --borda:#E8DCC6;
+  --erro:#E2483D;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html,body{margin:0;padding:0;}
+body{
+  font-family:'Nunito',system-ui,sans-serif;
+  background:var(--papel);
+  background-image:radial-gradient(circle at 12px 12px,rgba(63,163,77,.08) 3px,transparent 4px),radial-gradient(circle at 36px 36px,rgba(242,140,40,.08) 3px,transparent 4px);
+  background-size:48px 48px;
+  color:var(--tinta);font-size:17px;line-height:1.5;padding-bottom:40px;
+}
+h1,h2,h3{font-family:'Baloo 2',cursive;margin:0 0 10px;line-height:1.2;}
+.wrap{max-width:560px;margin:0 auto;padding:0 14px;}
+
+/* topo: a mochila de adesivos */
+.topbar{position:sticky;top:0;z-index:40;background:var(--verde);border-bottom:4px solid var(--verde-esc);padding:8px 0 6px;}
+.topbar .wrap{display:flex;align-items:center;gap:8px;}
+.logo{font-family:'Baloo 2',cursive;font-weight:800;font-size:1rem;color:#FFF6E0;white-space:nowrap;}
+.ovos{display:flex;gap:5px;margin-left:auto;}
+.ov{width:26px;height:26px;border-radius:50%;background:#E6F3E8;border:3px dashed #9BCFA3;opacity:.6;transition:.25s;display:flex;align-items:center;justify-content:center;font-size:.85rem;}
+.ov.on{background:var(--amar);border:3px solid #fff;opacity:1;transform:rotate(-8deg) scale(1.08);}
+.ov.on::after{content:'⭐';}
+.tray-label{text-align:center;font-size:.72rem;color:#E6F7E8;font-weight:800;}
+
+.screen{display:none;}
+.screen.on{display:block;animation:fade .25s ease;}
+@keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
+
+.card{background:#fff;border:3px solid var(--borda);border-radius:18px;padding:16px;margin:14px 0;box-shadow:0 4px 0 rgba(0,0,0,.06);}
+.card.blue{background:var(--azul-claro);border-color:#C6D5F3;}
+.card.green{background:#EAF6EC;border-color:#BFE2C5;}
+.card.lilas{background:#F3EDFB;border-color:#D9C8F1;}
+
+.hero{background:linear-gradient(180deg,#7FC3F0 0%,#BFE3F7 62%,#6CC07A 62%,#3FA34D 100%);color:#fff;border-radius:20px;padding:20px 16px 18px;margin:16px 0;border:3px solid var(--verde-esc);text-align:center;position:relative;overflow:hidden;}
+.hero::after{content:'🏠 🌳 🏛️ 🛤️ 🏫';position:absolute;left:0;right:0;bottom:6px;font-size:1.25rem;letter-spacing:6px;opacity:.95;}
+.hero h1{font-size:1.95rem;color:#fff;text-shadow:0 2px 0 rgba(0,0,0,.25);margin:6px 0 2px;}
+.hero .sub{font-size:.95rem;font-weight:800;text-shadow:0 1px 0 rgba(0,0,0,.3);color:#fff;}
+.hero .prova{display:inline-block;margin:10px 0 26px;background:var(--amar);color:#fff;font-weight:900;border-radius:999px;padding:5px 14px;font-size:.85rem;}
+.mascote{display:flex;gap:10px;align-items:flex-start;background:#fff;border:3px solid var(--borda);border-radius:16px;padding:12px;margin:12px 0;}
+.mascote .face{font-size:2.4rem;line-height:1;flex:0 0 auto;}
+.balao{position:relative;background:#FFF1DF;border:2px solid #F2C99A;border-radius:14px;padding:9px 11px;font-weight:700;font-size:.95rem;flex:1;}
+.balao::before{content:'';position:absolute;left:-9px;top:14px;border:7px solid transparent;border-right-color:#F2C99A;}
+
+.btn{display:block;width:100%;border:0;border-radius:14px;font-family:'Baloo 2',cursive;font-weight:700;font-size:1.05rem;padding:13px 14px;margin:9px 0;cursor:pointer;text-align:left;background:var(--azul);color:#fff;box-shadow:0 4px 0 var(--azul-esc);transition:.1s;position:relative;}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 var(--azul-esc);}
+.btn:focus-visible{outline:4px solid var(--amar);outline-offset:2px;}
+.btn.yellow{background:var(--amar);color:#fff;box-shadow:0 4px 0 var(--amar-esc);}
+.btn.red{background:var(--erro);color:#fff;box-shadow:0 4px 0 #AE2F26;}
+.btn.green{background:var(--verde);color:#fff;box-shadow:0 4px 0 var(--verde-esc);}
+.btn.lilas{background:var(--verm);color:#fff;box-shadow:0 4px 0 var(--verm-esc);}
+.btn.ghost{background:#fff;color:var(--azul-esc);border:3px solid var(--azul);box-shadow:none;}
+.btn.small{font-size:.92rem;padding:9px 12px;}
+.btn[disabled]{opacity:.45;cursor:not-allowed;}
+.btn.locked{background:#DAD7DF;color:#6C6878;box-shadow:0 4px 0 #BBB7C4;}
+.btn.glow{animation:glow 1.6s ease-in-out 3;}
+@keyframes glow{0%,100%{box-shadow:0 4px 0 var(--azul-esc),0 0 0 0 rgba(242,140,40,0);}50%{box-shadow:0 4px 0 var(--azul-esc),0 0 0 7px rgba(242,140,40,.55);}}
+.selo{display:inline-block;font-family:'Nunito';font-size:.72rem;font-weight:900;border-radius:999px;padding:2px 8px;margin-left:6px;vertical-align:middle;}
+.selo.ok{background:#DDF3E1;color:#1F6B2B;}
+.selo.novo{background:#FFE7CC;color:#8A4A00;}
+.btn-row{display:flex;gap:8px;}
+.btn-row .btn{flex:1;}
+.menu-desc{font-size:.82rem;color:var(--cinza);margin:-4px 0 10px 4px;font-weight:700;}
+.menu-desc.lock{color:#8A4B2A;}
+.paisbox{background:#FFE7CC;border:2px solid #F2B46B;border-radius:14px;padding:10px 12px;margin:10px 0;font-weight:800;font-size:.92rem;}
+
+/* pílulas */
+.pill-box{background:#fff;border:3px dashed var(--verde);border-radius:18px;padding:22px 16px;text-align:center;min-height:200px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:10px;}
+.pill-emoji{font-size:3.1rem;line-height:1;}
+.pill-text{font-size:1.1rem;font-weight:800;}
+.pill-extra{font-size:.98rem;font-weight:800;color:var(--azul-esc);background:var(--azul-claro);border-radius:12px;padding:8px 10px;}
+.pill-dots{display:flex;gap:6px;justify-content:center;margin:12px 0;flex-wrap:wrap;}
+.pill-dots i{width:10px;height:10px;border-radius:50%;background:#E3DCCD;display:block;}
+.pill-dots i.on{background:var(--amar);}
+.fotos{display:flex;gap:8px;width:100%;}
+.fotos div{flex:1;background:#F6F1E6;border:2px solid var(--borda);border-radius:12px;padding:8px;font-size:.9rem;font-weight:800;text-align:left;}
+.fotos b{display:block;font-family:'Baloo 2';font-size:1rem;color:var(--verm-esc);}
+
+/* jogo */
+.q-count{font-size:.8rem;font-weight:900;color:var(--cinza);text-align:right;}
+.q-text{font-size:1.06rem;font-weight:800;margin:6px 0 12px;}
+.opt{display:block;width:100%;text-align:left;border:3px solid var(--borda);background:#fff;border-radius:14px;padding:12px 14px;margin:8px 0;font-family:'Nunito';font-weight:800;font-size:1rem;cursor:pointer;transition:.12s;color:var(--tinta);}
+.opt:hover{border-color:var(--azul);}
+.opt:focus-visible{outline:4px solid var(--amar);outline-offset:2px;}
+.opt.ok{background:#E2F4E5;border-color:var(--verde);}
+.opt.no{background:#FCE4E1;border-color:var(--erro);}
+.opt[disabled]{cursor:default;}
+.fb{margin:12px 0;padding:12px;border-radius:14px;font-weight:700;display:none;}
+.fb.on{display:block;}
+.fb.good{background:#E2F4E5;border:2px solid var(--verde);}
+.fb.bad{background:#FCE4E1;border:2px solid var(--erro);}
+.duo{display:flex;gap:8px;}
+.duo .opt{flex:1;text-align:center;}
+.vis{text-align:center;margin:4px 0 8px;}
+.frase{background:#FFFBF2;border:2px dashed var(--amar);border-radius:14px;padding:12px;font-weight:800;font-size:1.05rem;text-align:center;margin:0 0 10px;}
+.texto{background:#FFFDF7;border:2px solid var(--borda);border-left:6px solid var(--verde);border-radius:12px;padding:12px;font-weight:600;font-size:.97rem;text-align:left;margin:4px 0 10px;}
+.texto p{margin:0 0 8px;}
+.texto .fonte{font-size:.78rem;color:var(--cinza);font-weight:700;margin:0;}
+
+/* separar em grupos */
+.grp-card{background:#fff;border:3px solid var(--amar);border-radius:18px;padding:14px;text-align:center;margin:6px 0 10px;}
+.grp-btns{display:flex;flex-wrap:wrap;gap:8px;}
+.grp-btns .opt{flex:1 1 45%;text-align:center;margin:0;}
+.grp-btns .opt.shake{animation:shake .35s;border-color:var(--erro);background:#FCE4E1;}
+@keyframes shake{0%,100%{transform:none;}25%{transform:translateX(-6px);}75%{transform:translateX(6px);}}
+.baskets{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+.basket{flex:1 1 45%;background:var(--azul-claro);border:2px dashed #A9C0EE;border-radius:14px;padding:8px;min-height:64px;font-size:.85rem;}
+.basket b{display:block;font-family:'Baloo 2';font-size:.95rem;}
+.chip{display:inline-block;background:#fff;border:2px solid var(--verde);border-radius:999px;padding:2px 8px;margin:3px 2px;font-weight:800;font-size:.82rem;}
+
+/* escrita */
+.wbox{border:3px solid var(--borda);border-radius:16px;padding:13px;margin:12px 0;background:#fff;}
+.wbox.red{border-color:var(--erro);background:#FFF2F0;}
+.wbox h4{margin:0 0 6px;font-family:'Baloo 2';font-size:1.02rem;}
+.wbox textarea{width:100%;min-height:90px;border:2px solid var(--borda);border-radius:12px;padding:10px;font-family:'Nunito';font-size:1rem;font-weight:600;resize:vertical;background:#FFFDF6;}
+.wbox textarea:focus{outline:3px solid var(--amar);border-color:var(--amar);}
+.warn{background:#FFF3CE;border:2px solid #E5B93C;border-radius:12px;padding:10px;margin:8px 0;font-weight:700;font-size:.93rem;}
+.redflag{background:#FCE4E1;border:2px solid var(--erro);border-radius:12px;padding:10px;margin:8px 0;font-weight:800;font-size:.9rem;color:#8E2A18;}
+.modelo{background:var(--azul-claro);border:2px solid #C6D5F3;border-radius:12px;padding:10px;margin:8px 0;font-weight:700;font-size:.95rem;}
+.chk{margin:8px 0;}
+.chk p{margin:6px 0 4px;font-weight:800;font-size:.94rem;}
+.chk .yn{display:flex;gap:8px;}
+.chk .yn button{flex:1;border:3px solid var(--borda);background:#fff;border-radius:10px;padding:7px;font-family:'Nunito';font-weight:900;cursor:pointer;font-size:.92rem;}
+.chk .yn button.sel-y{background:#E2F4E5;border-color:var(--verde);}
+.chk .yn button.sel-n{background:#FFF3CE;border-color:#E5B93C;}
+
+/* cartaz */
+.tbl{width:100%;border-collapse:collapse;font-size:.92rem;margin:8px 0;}
+.tbl th,.tbl td{border:2px solid var(--borda);padding:6px 8px;text-align:left;vertical-align:top;}
+.tbl th{background:var(--azul-claro);font-weight:900;}
+.postit{background:#FFF6A8;border:2px solid #E8D75A;border-radius:6px;padding:11px;margin:10px 0;font-weight:800;font-size:.95rem;box-shadow:2px 3px 0 rgba(0,0,0,.08);}
+.alerta{background:#FCE4E1;border:2px solid var(--erro);border-radius:12px;padding:11px;margin:10px 0;font-weight:800;font-size:.95rem;}
+
+/* resultado */
+.big{font-size:3.4rem;text-align:center;line-height:1;margin:6px 0;}
+.code-box{background:var(--tinta);color:#FFD9A8;border-radius:14px;padding:14px;text-align:center;font-family:'Baloo 2';font-size:1.6rem;font-weight:800;letter-spacing:2px;margin:12px 0;}
+.codein{width:100%;border:3px solid var(--borda);border-radius:12px;padding:11px;font-family:'Baloo 2';font-size:1.1rem;text-align:center;letter-spacing:2px;text-transform:uppercase;}
+.save-info{font-size:.8rem;color:var(--cinza);font-weight:700;text-align:center;margin-top:10px;}
+textarea#backupBox{width:100%;min-height:76px;border:2px solid var(--borda);border-radius:12px;padding:9px;font-family:monospace;font-size:.78rem;}
+
+.mask{position:fixed;inset:0;background:rgba(30,30,50,.6);display:none;align-items:center;justify-content:center;z-index:90;padding:18px;}
+.mask.on{display:flex;}
+.md{background:#fff;border-radius:18px;padding:18px;max-width:380px;width:100%;border:4px solid var(--amar);}
+.md h3{font-size:1.2rem;}
+.conf{position:fixed;top:-12px;width:9px;height:14px;z-index:95;pointer-events:none;border-radius:2px;}
+@keyframes fall{to{transform:translateY(105vh) rotate(720deg);opacity:0;}}
+@media (prefers-reduced-motion:reduce){.screen.on{animation:none;}.conf{display:none;}.btn:active{transform:none;}.btn.glow{animation:none;}.grp-btns .opt.shake{animation:none;}}
+.rodape{text-align:center;font-size:.78rem;color:var(--cinza);font-weight:700;padding:18px 0 6px;}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="logo">🐶 Do Bairro à Escola</span>
+    <div class="ovos" aria-label="Adesivos da mochila">
+      <div class="ov" id="ov1"></div><div class="ov" id="ov2"></div><div class="ov" id="ov3"></div>
+      <div class="ov" id="ov4"></div><div class="ov" id="ov5"></div><div class="ov" id="ov6"></div>
+    </div>
+  </div>
+  <div class="tray-label" id="trayLabel">🎒 Sua mochila</div>
+</div>
+
+<!-- ============ MENU ============ -->
+<section class="screen on" id="scr-menu">
+  <div class="wrap">
+    <div class="hero">
+      <h1>Do Bairro à Escola</h1>
+      <div class="sub">História · 2º ano · Colégio São José</div>
+      <div class="sub">O bairro, suas memórias e a convivência na escola</div>
+      <div class="prova">🗓️ Avaliação: terça-feira, 03/11</div>
+    </div>
+
+    <div class="mascote">
+      <div class="face">🐶</div>
+      <div class="balao">
+        Au-au, jovem aprendiz! Eu sou o <b>Biscoito</b>, o cachorrinho do bairro.
+        Todo dia eu acompanho as crianças de casa até a escola. Hoje vamos fazer esse caminho juntos,
+        com <b>6 paradas</b>: a praça, o museu, a rua antiga, o portão da escola, a secretaria e a sala de aula.
+        As paradas abrem <b>uma de cada vez, na ordem</b>: termine uma para destravar a próxima.
+        Cada parada vale um <b>adesivo</b> para a sua mochila lá em cima! 🎒
+      </div>
+    </div>
+
+    <div id="paisSelo"></div>
+    <h2>🐾 O caminho</h2>
+    <div id="menuList"></div>
+
+    <button class="btn ghost small" onclick="go('scr-pais')">👪 Área dos pais</button>
+    <div class="save-info" id="saveInfo"></div>
+    <div class="rodape">Feito para estudar sozinho, no celular ou no computador.</div>
+  </div>
+</section>
+
+<!-- ============ CARTAZ DO CAMINHO ============ -->
+<section class="screen" id="scr-mural">
+  <div class="wrap">
+    <h1 style="margin-top:14px;">🗺️ Cartaz do Caminho</h1>
+    <p style="font-weight:700;">Tudo o que cai na avaliação de <b>03/11</b>, num lugar só. Leia com um adulto, devagar, até o fim.</p>
+
+    <div class="card green">
+      <h3>🌳 Os espaços de lazer do bairro</h3>
+      <p style="font-weight:700;"><b>Espaço de lazer</b> = área onde a comunidade pode se divertir.</p>
+      <table class="tbl">
+        <tr><th>Exemplos de espaços de lazer</th></tr>
+        <tr><td>parques · praças · cinema · teatro · biblioteca · centro esportivo · museu</td></tr>
+      </table>
+      <table class="tbl">
+        <tr><th>Lugar</th><th>O que tem lá</th></tr>
+        <tr><td>🦕 <b>Lagoa dos Dinossauros</b><br>bairro do Stiep, Salvador (Bahia)</td><td>Era a antiga <b>Lagoa dos Frades</b>. Foi restaurada em 2021. Tem espaço para caminhada, brinquedos para crianças e <b>réplicas</b> de dinossauros que fazem sons. Fica numa área com trechos de <b>Mata Atlântica</b>.</td></tr>
+        <tr><td>🪨 <b>Parque da Pedra da Cebola</b><br>Vitória (Espírito Santo)</td><td>Os habitantes podem <b>caminhar e observar a natureza</b>.</td></tr>
+        <tr><td>🏛️ <b>Museu da República</b><br>Rio de Janeiro</td><td>Tem móveis e quadros antigos. Conta sobre o <b>modo de vida das pessoas do passado</b>.</td></tr>
+      </table>
+      <div class="postit">💛 <b>Réplica</b> = cópia ou imitação de algo.<br>💛 Os <b>parques</b> ajudam a preservar o <b>meio ambiente</b>. Os <b>museus</b> ajudam a contar a <b>história do bairro e da comunidade</b>.</div>
+      <div class="alerta">⚠️ Pegadinha: "As imagens do parque e do museu mostram espaços de lazer?" A resposta é <b>SIM</b>, os dois são! Marque <b>só UMA</b> resposta (nada de marcar Sim e Não juntos).</div>
+    </div>
+
+    <div class="card lilas">
+      <h3>🏛️ Memórias do bairro</h3>
+      <p style="font-weight:700;">Não são só as construções e a natureza que contam a história de um bairro. Os <b>objetos</b> também contam: pinturas, fotos, esculturas, mapas e móveis. Eles contam a história de um bairro, de uma região e até de um país.</p>
+      <table class="tbl">
+        <tr><th>Objeto / lugar</th><th>O que é</th></tr>
+        <tr><td>🎶 Gramofone</td><td>aparelho usado para tocar músicas na década de 1920 (Museu Castelinho, Paranapiacaba, SP)</td></tr>
+        <tr><td>🍲 Cozinha antiga</td><td>parecida com as cozinhas do passado da região (Museu da Gente Sergipana, Aracaju, SE)</td></tr>
+        <tr><td>📰 Jornais antigos</td><td>Museu Tipografia Pão de Santo Antônio, Diamantina (MG)</td></tr>
+        <tr><td>🛞 Carroça de madeira</td><td>transportava "bolas de borracha", feitas com <b>látex</b> (Museu do Seringal Vila Paraíso, Manaus, AM)</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>🛤️ O antes e o agora</h3>
+      <p style="font-weight:700;">Cada bairro tem uma história. Os <b>nomes dos bairros</b> e as <b>construções antigas</b> são <b>pistas</b> da origem desses lugares, do que mudou e do que continua.</p>
+      <table class="tbl">
+        <tr><th>Mudança 🔄</th><th>Permanência 📌</th></tr>
+        <tr><td>o que <b>ficou diferente</b> de um tempo para outro</td><td>o que <b>continua</b></td></tr>
+      </table>
+      <p style="font-weight:700;">📷 Avenida Eduardo Ribeiro, em Manaus: na foto de <b>1907</b> aparecem bonde, carroças e árvores; na foto de <b>2024</b> aparecem carros, motos, prédios altos e árvores.</p>
+      <p style="font-weight:700;">🪶 O bairro <b>Jurunas</b>, em Belém (Pará), recebeu esse nome em referência ao <b>povo indígena Juruna</b>. As ruas também homenageiam diferentes povos indígenas.</p>
+      <div class="alerta">⚠️ Pegadinha da tirinha do Armandinho: ele <b>entendeu</b> "tombado" como <b>derrubado</b> (por isso ficou triste). Mas o <b>significado certo</b> de "tombado" é <b>PRESERVADO</b>. Leia bem qual das duas perguntas está sendo feita!</div>
+    </div>
+
+    <div class="card blue">
+      <h3>🏫 A comunidade escolar</h3>
+      <p style="font-weight:700;">É formada por: <b>estudantes · professores · funcionários da escola · famílias dos estudantes</b>.</p>
+      <table class="tbl">
+        <tr><th>Quem</th><th>O que faz</th></tr>
+        <tr><td>🍲 <b>Merendeiro</b> (ou cozinheiro, cantineiro)</td><td>prepara as refeições da escola</td></tr>
+        <tr><td>🗂️ <b>Diretor e coordenador</b></td><td>administram a escola e organizam o trabalho dos professores e funcionários</td></tr>
+        <tr><td>📁 <b>Secretário</b> (secretaria)</td><td>organiza toda a documentação, como a matrícula e o boletim</td></tr>
+        <tr><td>👪 <b>Famílias</b></td><td>participam de reuniões e comemorações e podem organizar associações de pais e responsáveis</td></tr>
+      </table>
+      <div class="postit">💛 Grupos de que fazemos parte: 1º a <b>família</b> (o primeiro grupo!) · a <b>vizinhança</b> (quem mora perto de casa) · a <b>comunidade escolar</b>. Na escola, passamos a maior parte do tempo com os <b>colegas de turma</b>, e cada um tem gostos, opiniões e jeitos diferentes.</div>
+      <div class="alerta">⚠️ No exercício com o quadro (merendeiro, secretário, diretor), use a palavra do quadro: quem prepara as refeições é o <b>MERENDEIRO</b>.</div>
+    </div>
+
+    <div class="card lilas">
+      <h3>📁 Os documentos escolares</h3>
+      <table class="tbl">
+        <tr><th>📝 Ficha de matrícula</th><th>📊 Boletim</th></tr>
+        <tr><td>Sem ela não dá para estudar na escola. É um <b>documento pessoal</b> (informações sobre uma pessoa). Mostra que você faz parte da comunidade escolar.</td><td>Mostra o <b>desempenho</b> do estudante e um pouco de como a escola está organizada.</td></tr>
+        <tr><td>data da matrícula, ano, turma, turno, nome, data de nascimento, nacionalidade, endereço, telefone</td><td>no boletim antigo do livro: <b>nome do estudante, nome da escola, nomes dos componentes e notas</b></td></tr>
+      </table>
+      <div class="postit">💛 A <b>secretaria</b> guarda os documentos importantes: a matrícula e o boletim.<br>💛 Os documentos escolares <b>registram informações importantes sobre os estudantes e a escola</b> e ajudam a conhecer como a escola funcionava em outras épocas.</div>
+      <div class="alerta">⚠️ No boletim antigo aparecem <b>4 coisas</b>: nome do estudante, nome da escola, nomes dos componentes e notas. <b>Não</b> aparecem o endereço nem a data de nascimento.</div>
+    </div>
+
+    <div class="card green">
+      <h3>🤝 Direitos e deveres na escola</h3>
+      <table class="tbl">
+        <tr><th>✅ DIREITOS<br><small>o que podemos fazer ou merecemos ter</small></th><th>📌 DEVERES<br><small>obrigações e responsabilidades</small></th></tr>
+        <tr><td>ter sala de aula adequada para estudar<br>ser respeitado por professores, funcionários e colegas<br>receber cuidados quando se machuca<br>conviver em harmonia com as pessoas<br>receber educação de qualidade<br>expressar sua opinião de maneira respeitosa</td>
+            <td>cuidar da limpeza da escola<br>conservar as carteiras e os materiais<br><b>prestar atenção às aulas e fazer as atividades</b><br>participar das atividades em grupo<br>respeitar os colegas, o professor e os funcionários</td></tr>
+      </table>
+      <div class="alerta">⚠️ "Prestar atenção nas aulas e fazer as atividades são deveres de todos os estudantes." É <b>VERDADEIRO (V)</b>!</div>
+      <p style="font-weight:700;"><b>Regras de convivência</b> fazem todos se sentirem respeitados, viverem em harmonia e resolverem os conflitos de maneira gentil. Exemplo: <b>levantar a mão para falar</b> e esperar a sua vez.</p>
+      <table class="tbl">
+        <tr><th>💙 Respeitoso</th><th>❤️ Desrespeitoso</th></tr>
+        <tr><td>jogar o lixo na lixeira · ajudar os colegas · dizer bom-dia aos funcionários</td><td>falar sem esperar a sua vez · fazer comentários maldosos sobre um colega</td></tr>
+      </table>
+      <table class="tbl">
+        <tr><th>Verdadeiro ou falso? (exercício do livro)</th><th></th></tr>
+        <tr><td>Falar ao mesmo tempo que o professor ajuda a aprender melhor.</td><td><b>F</b></td></tr>
+        <tr><td>Estudantes, professores e funcionários têm o direito de serem respeitados.</td><td><b>V</b></td></tr>
+        <tr><td>Jogar o lixo no chão da sala é um direito do estudante.</td><td><b>F</b></td></tr>
+        <tr><td>Prestar atenção nas aulas e fazer as atividades são deveres de todos os estudantes.</td><td><b>V</b></td></tr>
+        <tr><td>Os estudantes podem sair da sala a qualquer momento sem pedir autorização.</td><td><b>F</b></td></tr>
+      </table>
+      <div class="postit">📖 No texto de Heloisa Prieto, aparecem da comunidade escolar: a <b>professora</b>, os <b>estudantes</b> e a <b>orientadora</b>. "Irada" = com raiva. Lucinha rasgou o desenho do colega: não foi respeitoso. Ela poderia ter dito o que sentiu de maneira respeitosa.</div>
+    </div>
+
+    <div class="card blue">
+      <h3>🕊️ Viver em paz: o ECA</h3>
+      <p style="font-weight:700;">Para conviver em paz, todos precisam se respeitar. Direitos e deveres ajudam nessa convivência.</p>
+      <p style="font-weight:700;">O <b>Estatuto da Criança e do Adolescente (ECA)</b> reúne regras que garantem às crianças direitos como <b>vida, saúde, liberdade, respeito, dignidade, convivência familiar, educação, cultura, esporte e lazer</b>.</p>
+      <div class="postit">⚽ Toda criança tem o direito de brincar, praticar esportes, passear e se divertir.<br>📚 A criança tem o direito de ir à escola e receber uma educação de qualidade.<br>🍎 A família deve garantir que a criança tenha uma alimentação saudável.</div>
+    </div>
+
+    <div class="card" style="text-align:center;" id="muralFim">
+      <p style="font-weight:800;">Chegou até aqui? Então clique no botão:</p>
+      <button class="btn green" id="btnLiMural" onclick="concluirMural()" disabled>✅ Li o cartaz até o fim</button>
+      <p class="menu-desc" id="muralHint" style="margin:0;">O botão acende quando você rolar até o fim do cartaz.</p>
+      <button class="btn yellow" id="btnProntoFinal" onclick="openStep(7)" style="display:none;">🏆 Pronta(o) para o Desafio Final!</button>
+    </div>
+    <button class="btn ghost small" onclick="go('scr-menu')">⬅️ Voltar para o caminho</button>
+    <div class="rodape">&nbsp;</div>
+  </div>
+</section>
+
+<!-- ============ PÍLULAS ============ -->
+<section class="screen" id="scr-pill">
+  <div class="wrap">
+    <h2 id="pillTitle" style="margin-top:14px;"></h2>
+    <div class="pill-box" id="pillBox"></div>
+    <div class="pill-dots" id="pillDots"></div>
+    <button class="btn yellow" id="pillNext">Entendi! Próximo ➡️</button>
+    <button class="btn ghost small" onclick="go('scr-menu')">⬅️ Voltar para o caminho</button>
+    <div class="rodape">&nbsp;</div>
+  </div>
+</section>
+
+<!-- ============ JOGO ============ -->
+<section class="screen" id="scr-game">
+  <div class="wrap">
+    <h2 id="gameTitle" style="margin-top:14px;"></h2>
+    <div class="q-count" id="gameCount"></div>
+    <div id="gameArea"></div>
+    <div class="fb" id="gameFb"></div>
+    <button class="btn yellow" id="gameNext" style="display:none;">Continuar ➡️</button>
+    <button class="btn ghost small" onclick="go('scr-menu')">⬅️ Voltar para o caminho</button>
+    <div class="rodape">&nbsp;</div>
+  </div>
+</section>
+
+<!-- ============ PARADA FEITA ============ -->
+<section class="screen" id="scr-won">
+  <div class="wrap">
+    <div class="card" style="text-align:center;">
+      <div class="big">🎒</div>
+      <h2>Parada concluída!</h2>
+      <p id="wonMsg" style="font-weight:800;"></p>
+      <button class="btn yellow" id="wonNext">Próxima parada ➡️</button>
+      <button class="btn ghost small" onclick="go('scr-menu')">⬅️ Voltar para o caminho</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FIM DO DESAFIO ============ -->
+<section class="screen" id="scr-fim">
+  <div class="wrap">
+    <div class="card" style="text-align:center;">
+      <div class="big">🏆</div>
+      <h2>Desafio Final concluído!</h2>
+      <p style="font-weight:900;font-size:1.18rem;" id="fimScore"></p>
+      <p id="fimMsg"></p>
+      <div class="code-box" id="fimCode"></div>
+      <p style="font-size:.85rem;font-weight:700;">Mostre este código para um adulto. 😊</p>
+      <button class="btn green" onclick="go('scr-menu')">⬅️ Voltar para o caminho</button>
+      <button class="btn ghost small" onclick="openStep(7)">🔁 Fazer o Desafio Final de novo</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ÁREA DOS PAIS ============ -->
+<section class="screen" id="scr-pais">
+  <div class="wrap">
+    <h1 style="margin-top:14px;">👪 Área dos pais</h1>
+
+    <div class="card blue">
+      <h3>🗓️ Plano de estudo sugerido (avaliação na terça, 03/11)</h3>
+      <p><b>Dia 1 à tarde:</b> paradas 1 e 2 (espaços de lazer e objetos que contam a história).<br>
+      <b>Dia 1 à noite:</b> parada 3 (antes e agora, nomes de bairros, "tombado"; tem escrita).<br>
+      <b>Dia 2 à tarde:</b> paradas 4 e 5 (comunidade escolar, matrícula e boletim).<br>
+      <b>Dia 2 à noite:</b> parada 6 (direitos, deveres, regras de convivência e ECA).<br>
+      <b>Segunda-feira, 02/11:</b> o Cartaz do Caminho lido junto + o Desafio Final.<br>
+      <b>Terça, antes da aula:</b> só o Cartaz.</p>
+      <p style="font-size:.9rem;"><b>Como funciona:</b> os materiais abrem um por vez, na ordem. Conclua um para destravar o próximo.
+      O progresso fica <b>neste aparelho</b>; para continuar em outro, use 📥 Exportar / 📤 Importar ou a chave dos pais abaixo.</p>
+      <p style="font-size:.9rem;"><b>Atenção:</b> o comunicado pede para estudar também os <b>registros do caderno</b>. Eles <b>não vieram</b> para este kit, então não estão aqui: vale revisar o caderno junto com a criança.</p>
+    </div>
+
+    <div class="card">
+      <h3>✏️ Pontos para reforçar (vistos no livro)</h3>
+      <p style="font-size:.92rem;">Nas fotos do livro, algumas respostas da criança estavam erradas ou em branco. O kit treina cada uma delas:</p>
+      <ul style="font-weight:700;font-size:.92rem;">
+        <li><b>p. 110 (a):</b> marcou <b>Sim e Não</b>. O certo é só <b>Sim</b>: parque e museu são espaços de lazer.</li>
+        <li><b>p. 124:</b> marcou <b>F</b> em "Prestar atenção nas aulas e fazer as atividades são deveres de todos os estudantes". O certo é <b>V</b>. E deixou em branco "sair da sala sem pedir autorização" (é <b>F</b>).</li>
+        <li><b>p. 117 (6):</b> marcou só "nome do estudante". No boletim aparecem também <b>nome da escola, nomes dos componentes e notas</b>.</li>
+        <li><b>p. 125 (1b):</b> escreveu "cozinheiro"; o exercício pede a palavra do quadro: <b>merendeiro</b>.</li>
+        <li><b>p. 125 (2)</b> e <b>p. 109</b> ficaram em branco: estão treinados nas paradas 3 e 5.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>📊 Relatório e gabarito</h3>
+      <p style="font-size:.92rem;">Digite o código <b>PAIS-77</b> (fixo da família) ou o código <b>SIM-XX-YY</b> que apareceu no fim do Desafio Final.</p>
+      <input class="codein" id="paisCode" placeholder="PAIS-77" maxlength="9">
+      <button class="btn small" onclick="abrirRelatorio()">Ver relatório e gabarito</button>
+      <div id="paisTrilha"></div>
+      <div id="paisReport"></div>
+    </div>
+
+    <div class="card">
+      <h3>🔑 Sobre o código SIM-XX-YY</h3>
+      <p style="font-size:.93rem;"><b>XX</b> = quantas questões do Desafio Final foram acertadas (00 a 10).<br>
+      <b>YY</b> = duas letras fixas deste aparelho. Se mudarem, o material foi zerado.</p>
+    </div>
+
+    <div class="card">
+      <h3>💾 Salvar, passar de aparelho e zerar</h3>
+      <div class="btn-row">
+        <button class="btn small green" onclick="exportar()">📥 Exportar</button>
+        <button class="btn small" onclick="importar()">📤 Importar</button>
+      </div>
+      <textarea id="backupBox" placeholder="O código do backup aparece (ou é colado) aqui."></textarea>
+      <button class="btn small red" onclick="zerar()">🗑️ Zerar tudo</button>
+    </div>
+
+    <button class="btn ghost" onclick="go('scr-menu')">⬅️ Voltar para o caminho</button>
+    <div class="rodape">Fonte: livro Ecos História 2 (SM): Os espaços de lazer do bairro p. 104; Memórias do bairro pp. 105, 107, 109 e 110; Módulo 8 — Convivência na escola pp. 113 a 120, 124, 125, 126 (texto de Heloisa Prieto) e 127 (ECA).</div>
+  </div>
+</section>
+
+<div class="mask" id="mask">
+  <div class="md">
+    <h3 id="mdTitle"></h3>
+    <p id="mdMsg"></p>
+    <button class="btn" id="mdOk">Está bem</button>
+    <button class="btn ghost" id="mdCancel" style="display:none;">Cancelar</button>
+  </div>
+</div>
+<script>
+/* =========================================================
+   DO BAIRRO À ESCOLA — História 2º ano — Colégio São José
+   Fonte ÚNICA: fotos do livro Ecos História 2 (SM Aprendizagem):
+   p.104 Os espaços de lazer do bairro · p.105 Memórias do bairro ·
+   p.107 Multidesafio · pp.109-110 Antes de terminar ·
+   p.113 Módulo 8 Convivência na escola · p.114 A comunidade escolar ·
+   p.115 Colegas de turma · pp.116-117 Faço parte dessa comunidade ·
+   p.118 Direitos e deveres na escola · p.119 Todos merecem respeito ·
+   p.120 A boa convivência na escola · p.124 Hora extra ·
+   pp.125-126 Antes de terminar · p.127 Cidadão do mundo (ECA).
+   Sem áudio. Sem nome de pessoas reais da escola.
+   ========================================================= */
+"use strict";
+
+function vis(html){ return '<div class="vis">'+html+'</div>'; }
+
+var TITULOS={1:'🌳 Praça do Lazer',2:'🏛️ Museu do Bairro',3:'🛤️ Rua do Antes e Agora',
+             4:'🏫 Portão da Escola',5:'📁 Secretaria',6:'🤝 Sala da Convivência'};
+var DESC={1:'Os espaços de lazer do bairro: parques, praças, museus…',
+          2:'Objetos que contam a história do bairro e os museus.',
+          3:'Mudanças e permanências, nomes de bairros e o que é "tombado". ⭐ Tem escrita.',
+          4:'A comunidade escolar: quem é quem na escola. Família, vizinhança e colegas.',
+          5:'A ficha de matrícula, o boletim e a secretaria.',
+          6:'Direitos e deveres, regras de convivência e o ECA.'};
+
+/* trecho do livro (p.126) — Heloisa Prieto, A vida é um palco */
+var TEXTO_LAURA='<div class="texto">'+
+ '<p>A Laura, que é a professora, pediu pra gente desenhar os melhores amigos. Eu desenhei: o André jogando bola, a Paula brincando na areia, a Lucinha na gangorra e eu tirando foto dela. Todo mundo do mesmo tamanho.</p>'+
+ '<p>Mas a Lucinha ficou <b>irada</b>. Correu para minha mesa, pegou meu desenho, rabiscou inteiro, depois rasgou, picou e jogou no lixo. Isso porque, no desenho dela, eu era a principal. E, no desenho do André, a Paula era a principal. E, no desenho da Paula, a principal era ela mesma. A Laura tinha saído pra pegar tinta. Toda a classe veio me defender.</p>'+
+ '<p>O André berrou, a Paula empurrou a Lucinha, que caiu perto do armário onde ficam as mochilas. Joana, a orientadora, entrou por causa da gritaria. [...]</p>'+
+ '<p>A Laura, nossa professora, entrou, escorregou, caiu sentada na tinta [...].</p>'+
+ '<p class="fonte">Heloisa Prieto. <i>A vida é um palco</i>. São Paulo: SM, 2006. p. 32-41. · <b>Irada:</b> com raiva.</p></div>';
+
+/* =========================================================
+   PÍLULAS DE TEORIA (tudo do livro)
+   ========================================================= */
+var PILLS={
+1:{t:'🌳 Parada 1 — Praça do Lazer',p:[
+ {e:'🎠',x:'<b>Espaços de lazer</b> são áreas onde a comunidade pode <b>se divertir</b>.',y:'Exemplos: parques e praças'},
+ {e:'🎭',x:'Existem <b>vários</b> espaços de lazer em um bairro:',y:'parques · praças · cinema · teatro · biblioteca · centro esportivo · museu'},
+ {e:'🦕',x:'Em 2021, o bairro do Stiep, em <b>Salvador, na Bahia</b>, ganhou um novo espaço de lazer: a antiga <b>Lagoa dos Frades</b> foi restaurada e virou a <b>Lagoa dos Dinossauros</b>.'},
+ {e:'🔊',x:'Lá tem espaço para caminhada, brinquedos para crianças e <b>réplicas</b> de dinossauros que fazem sons quando as pessoas chegam perto.',y:'Réplica = cópia ou imitação de algo'},
+ {e:'🌿',x:'A Lagoa dos Dinossauros fica numa área com trechos de <b>Mata Atlântica</b>. Isso garante muito <b>contato com a natureza</b>.'},
+ {e:'🌳',x:'Os <b>parques</b> ajudam a <b>preservar o meio ambiente</b>.'},
+ {e:'🪨',x:'No <b>Parque da Pedra da Cebola</b>, em Vitória (Espírito Santo), os habitantes podem <b>caminhar e observar a natureza</b>.'},
+ {e:'🏛️',x:'O <b>museu</b> também é um espaço de lazer! E os museus ajudam a contar a <b>história do bairro e da comunidade</b>.',y:'Parque ✅ é espaço de lazer · Museu ✅ é espaço de lazer'}
+]},
+2:{t:'🏛️ Parada 2 — Museu do Bairro',p:[
+ {e:'🔎',x:'As construções e a natureza <b>não são as únicas</b> formas de conhecer a história e a memória de um bairro.'},
+ {e:'🖼️',x:'Os <b>objetos</b> também ajudam a contar a história de um bairro, de uma região e até de um país.',y:'pinturas · fotos · esculturas · mapas · móveis'},
+ {e:'🎶',x:'O <b>gramofone</b> era o aparelho usado para <b>tocar músicas</b> na década de 1920.',y:'Ele pode ser visto no Museu Castelinho, em Paranapiacaba, São Paulo.'},
+ {e:'🍲',x:'No Museu da Gente Sergipana, em Aracaju (Sergipe), dá para visitar uma <b>cozinha antiga</b>, parecida com as que existiam no passado da região.'},
+ {e:'📰',x:'<b>Jornais antigos</b> podem ser encontrados no Museu Tipografia Pão de Santo Antônio, em Diamantina, Minas Gerais.'},
+ {e:'🛞',x:'O Museu do Seringal Vila Paraíso, em Manaus (Amazonas), guarda uma <b>carroça de madeira antiga</b>, usada para transportar "bolas de borracha", feitas com <b>látex</b>.'},
+ {e:'🏛️',x:'Os <b>museus</b> ajudam a contar a <b>história do bairro e da comunidade</b>.'},
+ {e:'🪑',x:'O <b>Museu da República</b>, no Rio de Janeiro, tem móveis e quadros antigos. Ele conta sobre o <b>modo de vida das pessoas do passado</b>.'}
+]},
+3:{t:'🛤️ Parada 3 — Rua do Antes e Agora',p:[
+ {e:'🧩',x:'<b>Cada bairro tem uma história.</b>'},
+ {e:'🏷️',x:'Os <b>nomes dos bairros</b> e as <b>construções antigas</b> são <b>pistas</b> da origem desses lugares.',y:'Eles mostram como o lugar começou, o que mudou, o que continua e a atuação das pessoas que viveram ali (os sujeitos históricos).'},
+ {e:'🪶',x:'O bairro <b>Jurunas</b>, em Belém (Pará), recebeu esse nome em referência ao <b>povo indígena Juruna</b>. As ruas do bairro também homenageiam diferentes povos indígenas.',y:'O nome do bairro conta a sua origem!'},
+ {e:'🔄',x:'Quando comparamos o antes e o agora, procuramos:',y:'MUDANÇA = o que ficou diferente · PERMANÊNCIA = o que continua'},
+ {e:'<div class="fotos"><div><b>📷 1907</b>bonde, carroças e árvores na avenida</div><div><b>📷 2024</b>carros, motos, prédios altos e árvores na avenida</div></div>',x:'O livro mostra fotos da <b>Avenida Eduardo Ribeiro</b>, em Manaus (Amazonas), em dois momentos: <b>1907</b> e <b>2024</b>. Compare!'},
+ {e:'🏛️',x:'Na tirinha do <b>Armandinho</b>, alguém avisa: <i>"Esse prédio antigo da prefeitura vai ser tombado!"</i>. Armandinho fica triste: <i>"Mas que pena... Ele é tão bonito..."</i>'},
+ {e:'🤔',x:'Armandinho <b>entendeu</b> "tombado" como <b>derrubado</b>. Por isso ficou triste. Mas, na tirinha, "tombado" quer dizer <b>preservado</b>!',y:'Prédio tombado = prédio PRESERVADO (não vai ser derrubado)'},
+ {e:'🏚️',x:'As <b>construções antigas</b> de um bairro ajudam a entender <b>como a cidade começou</b>.'}
+]},
+4:{t:'🏫 Parada 4 — Portão da Escola',p:[
+ {e:'🏫',x:'As escolas estão presentes em <b>muitos bairros</b>.'},
+ {e:'🌈',x:'Na escola, convivemos com <b>muitas pessoas</b>, e cada uma tem seu <b>jeito de ser e de pensar</b>.'},
+ {e:'🔬',x:'Na escola descobrimos novos conhecimentos e investigamos o mundo. Aprendemos a <b>respeitar as diferenças</b> e o valor da <b>coletividade</b>.'},
+ {e:'👨‍👩‍👧',x:'A <b>COMUNIDADE ESCOLAR</b> é formada por:',y:'estudantes · professores · funcionários da escola · famílias dos estudantes'},
+ {e:'🍲',x:'Quem prepara as refeições na escola pode ser chamado de <b>merendeiro</b>, cozinheiro ou cantineiro.',y:'No exercício com o quadro, use a palavra MERENDEIRO.'},
+ {e:'🗂️',x:'Os <b>diretores</b> e os <b>coordenadores</b> administram a escola: organizam o trabalho dos professores e dos outros funcionários.'},
+ {e:'📁',x:'Na <b>secretaria</b> trabalham os profissionais que organizam toda a <b>documentação</b> da comunidade escolar, como a matrícula e o boletim.',y:'Secretário = organiza os documentos'},
+ {e:'👪',x:'As <b>famílias</b> podem participar de reuniões com os professores e de comemorações na escola, e até organizar associações de pais e responsáveis.'},
+ {e:'🏠',x:'O <b>primeiro grupo</b> do qual fazemos parte é a nossa <b>FAMÍLIA</b>. Com ela aprendemos a conviver, a cuidar uns dos outros e a respeitar diferenças.'},
+ {e:'🏘️',x:'Também fazemos parte da <b>VIZINHANÇA</b>: pessoas que moram perto da nossa casa e dividem o mesmo espaço do dia a dia.'},
+ {e:'🎒',x:'Na escola, é com os <b>colegas de turma</b> que passamos a <b>maior parte do tempo</b>.',y:'Entre eles existem gostos, opiniões, vontades, atitudes e comportamentos diferentes.'},
+ {e:'🙏',x:'É importante usar sempre <b>"por favor"</b> e <b>"obrigado"</b>. E dizer "Bom dia!", "Olá!", "Desculpe!".',y:'O que cada colega faz, como se comporta e como participa pode ajudar ou dificultar o aprendizado de todos.'}
+]},
+5:{t:'📁 Parada 5 — Secretaria',p:[
+ {e:'🎒',x:'Como estudante, <b>você faz parte</b> da comunidade escolar.'},
+ {e:'📝',x:'Para estudar em uma escola, é necessário fazer a <b>MATRÍCULA</b>. Ela mostra que você faz parte da comunidade escolar.'},
+ {e:'🪪',x:'A matrícula é um <b>documento pessoal</b>: tem informações sobre <b>uma pessoa</b>. É o documento que permite ao estudante frequentar a escola.'},
+ {e:'📋',x:'Na <b>ficha de matrícula</b> aparecem:',y:'data da matrícula · ano · turma · turno · nome · data de nascimento · nacionalidade · endereço · telefone'},
+ {e:'📊',x:'O <b>BOLETIM</b> traz informações sobre o <b>desempenho</b> do estudante e mostra um pouco de como a escola está organizada.'},
+ {e:'📜',x:'O livro mostra um <b>boletim antigo</b>, das décadas de 1920 e 1930. Olhe o que aparece nele:',y:'✅ nome do estudante · ✅ nome da escola · ✅ nomes dos componentes (Português, Aritmética, História, Geografia…) · ✅ notas'},
+ {e:'🗄️',x:'A <b>secretaria</b> da escola guarda os documentos importantes dos estudantes, como a matrícula e o boletim.'},
+ {e:'🔍',x:'Os <b>documentos escolares</b> guardam informações sobre a vida do estudante na escola. E servem para conhecer como a escola funcionava em <b>outras épocas</b>!'}
+]},
+6:{t:'🤝 Parada 6 — Sala da Convivência',p:[
+ {e:'✅',x:'<b>DIREITOS</b> = o que podemos fazer ou merecemos ter para manter a boa convivência.'},
+ {e:'📌',x:'<b>DEVERES</b> = obrigações e responsabilidades que devemos cumprir para o bom funcionamento da escola.'},
+ {e:'🟨',x:'Alguns <b>direitos</b> dos estudantes:',y:'ter sala de aula adequada para estudar · ser respeitado por professores, funcionários e colegas · receber cuidados quando se machuca · conviver em harmonia · receber educação de qualidade · expressar sua opinião de maneira respeitosa'},
+ {e:'🟧',x:'Alguns <b>deveres</b> dos estudantes:',y:'cuidar da limpeza da escola · conservar as carteiras e os materiais · prestar atenção às aulas e fazer as atividades · participar das atividades em grupo · respeitar os colegas, o professor e os funcionários'},
+ {e:'⚠️',x:'Atenção: <b>prestar atenção nas aulas e fazer as atividades</b> é um <b>DEVER</b> de todos os estudantes!',y:'Se essa frase aparecer num Verdadeiro ou Falso, ela é VERDADEIRA ✅'},
+ {e:'🤝',x:'Na escola existem <b>regras de convivência</b> para que todos se sintam <b>respeitados</b>, vivam em harmonia e resolvam os conflitos de maneira <b>gentil</b>.'},
+ {e:'✋',x:'<b>Levantar a mão para falar</b>, esperando a sua vez sem interromper quem está falando, é um exemplo de regra de convivência.'},
+ {e:'💙',x:'Atitudes <b>respeitosas</b>: jogar o lixo na lixeira, estar disposto a ajudar os colegas, dizer bom-dia aos funcionários.',y:'❤️ Desrespeitosas: falar na sala sem esperar a sua vez, fazer comentários maldosos sobre um colega'},
+ {e:'🌟',x:'Boa convivência na sala:',y:'pedir licença para falar e participar da aula · manter a sala limpa e cuidar das carteiras e dos materiais · participar das atividades em grupo e colaborar · tratar funcionários e toda a comunidade escolar com respeito'},
+ {e:'🕊️',x:'Para <b>conviver em paz</b>, é fundamental que todos se respeitem. Direitos e deveres ajudam nessa convivência.'},
+ {e:'📘',x:'No Brasil, o <b>Estatuto da Criança e do Adolescente (ECA)</b> reúne regras que garantem às crianças direitos como:',y:'vida · saúde · liberdade · respeito · dignidade · convivência familiar · educação · cultura · esporte · lazer'},
+ {e:'⚽',x:'Toda criança tem o direito de <b>brincar</b>, praticar esportes, passear e se divertir. Tem o direito de <b>ir à escola</b> e receber uma educação de qualidade.',y:'E a família deve garantir que a criança tenha uma alimentação saudável.'}
+]}
+};
+
+/* =========================================================
+   MINIJOGOS — t: mc | duo | grp | esc
+   c = índice da alternativa certa (guardada pelo conteúdo;
+   a ordem na tela é embaralhada com semente fixa — mulberry32)
+   ========================================================= */
+var SN=['✅ Sim','❌ Não'];
+var VF=['✅ Verdadeiro','❌ Falso'];
+var JOGO={
+1:[
+ {t:'grp',p:'O que podemos fazer em cada lugar? Leve cada cartão para o <b>parque</b> ou para o <b>museu</b>:',grupos:['🌳 Parque','🏛️ Museu'],
+  itens:[{e:'🚶',n:'Caminhar',g:0,d:'No Parque da Pedra da Cebola, os habitantes podem caminhar.'},
+         {e:'🌿',n:'Observar a natureza',g:0,d:'No parque observamos a natureza.'},
+         {e:'🖼️',n:'Ver móveis e quadros antigos',g:1,d:'Móveis e quadros antigos ficam no museu, como no Museu da República.'},
+         {e:'🕰️',n:'Conhecer o modo de vida das pessoas do passado',g:1,d:'O museu conta sobre o modo de vida das pessoas do passado.'},
+         {e:'🌎',n:'Ajudar a preservar o meio ambiente',g:0,d:'Os parques ajudam a preservar o meio ambiente.'},
+         {e:'📖',n:'Contar a história do bairro e da comunidade',g:1,d:'Os museus ajudam a contar a história do bairro.'}],
+  bom:'Parque = natureza e meio ambiente · Museu = história do bairro.'},
+ {t:'mc',p:'O que é um <b>espaço de lazer</b>?',o:['Uma área onde a comunidade pode se divertir','O lugar onde se guardam os documentos da escola','A cozinha onde se preparam as refeições da escola'],c:0,ex:{1:'Isso é a secretaria da escola.',2:'Isso é a cozinha, onde trabalha o merendeiro.'},bom:'Espaço de lazer = lugar para a comunidade se divertir.'},
+ {t:'mc',p:'Qual destes o livro mostra como <b>espaço de lazer</b> do bairro?',o:['Biblioteca','Secretaria da escola','Ficha de matrícula','Boletim'],c:0,ex:{1:'A secretaria organiza documentos; não está na lista de espaços de lazer.',2:'A ficha de matrícula é um documento.',3:'O boletim é um documento.'},bom:'Parques, praças, cinema, teatro, biblioteca, centro esportivo e museu são espaços de lazer.'},
+ {t:'duo',p:'As fotos mostram o <b>Parque da Pedra da Cebola</b> (Vitória) e o <b>Museu da República</b> (Rio de Janeiro).<div class="frase">As imagens mostram espaços de lazer?</div>',o:SN,c:0,bom:'SIM! Parque e museu são espaços de lazer. Atenção: marque só UMA resposta.'},
+ {t:'mc',p:'O que é uma <b>réplica</b>?',o:['Uma cópia ou imitação de algo','Um dinossauro de verdade','Um tipo de lagoa','Um documento da escola'],c:0,ex:{1:'Os dinossauros da lagoa são réplicas: cópias, não de verdade.',2:'Lagoa não tem a ver com réplica.',3:'Documento não tem a ver com réplica.'},bom:'Réplica = cópia ou imitação de algo.'},
+ {t:'mc',p:'A <b>Lagoa dos Dinossauros</b> fica em:',o:['Salvador, na Bahia','Manaus, no Amazonas','Vitória, no Espírito Santo','Belém, no Pará'],c:0,ex:{1:'Em Manaus fica o Museu do Seringal Vila Paraíso.',2:'Em Vitória fica o Parque da Pedra da Cebola.',3:'Em Belém fica o bairro Jurunas.'},bom:'No bairro do Stiep, em Salvador, na Bahia.'},
+ {t:'mc',p:'Antes de virar Lagoa dos Dinossauros, o lugar se chamava:',o:['Lagoa dos Frades','Pedra da Cebola','Vila Paraíso','Jurunas'],c:0,ex:{1:'Pedra da Cebola é um parque em Vitória.',2:'Vila Paraíso é um museu em Manaus.',3:'Jurunas é um bairro de Belém.'},bom:'A antiga Lagoa dos Frades foi restaurada em 2021.'},
+ {t:'mc',p:'No Parque da Pedra da Cebola, os habitantes podem:',o:['caminhar e observar a natureza','observar móveis e quadros antigos'],c:0,ex:{1:'Móveis e quadros antigos ficam no museu.'},bom:'No parque: caminhar e observar a natureza.'},
+ {t:'mc',p:'Os <b>parques</b> contribuem para:',o:['a preservação do meio ambiente','guardar a matrícula dos estudantes','tocar músicas no gramofone','organizar o trabalho dos professores'],c:0,ex:{1:'Quem guarda a matrícula é a secretaria.',2:'O gramofone está num museu.',3:'Isso é tarefa do diretor e do coordenador.'},bom:'Parques ajudam a preservar o meio ambiente.'},
+ {t:'mc',p:'A Lagoa dos Dinossauros garante muito contato com a natureza porque fica numa área com trechos de:',o:['Mata Atlântica','prédios altos','jornais antigos','carroças de madeira'],c:0,ex:{1:'Prédios não são natureza.',2:'Jornais antigos ficam num museu.',3:'A carroça fica num museu em Manaus.'},bom:'Trechos de Mata Atlântica.'}
+],
+2:[
+ {t:'mc',p:'Além das construções e da natureza, o que mais ajuda a contar a história de um bairro?',o:['Objetos como pinturas, fotos, esculturas, mapas e móveis','Nada: só as construções contam a história','Só os prédios novos','Só o nome das ruas novas'],c:0,ex:{1:'O livro diz que as construções NÃO são a única forma.',2:'Prédios novos não contam o passado.',3:'Os objetos também contam a história.'},bom:'Os objetos também contam a história de um bairro, de uma região e até de um país.'},
+ {t:'grp',p:'Cada objeto antigo tem uma história. Ligue o objeto ao que ele fazia ou mostra:',grupos:['🎶 Tocar músicas','🍲 Mostrar como se cozinhava','🛞 Transportar borracha','📰 Trazer notícias antigas'],
+  itens:[{e:'📀',n:'Gramofone',g:0,d:'O gramofone tocava músicas na década de 1920.'},
+         {e:'🛞',n:'Carroça de madeira',g:2,d:'A carroça transportava as "bolas de borracha", feitas com látex.'},
+         {e:'🍲',n:'Cozinha antiga',g:1,d:'A cozinha antiga mostra como eram as cozinhas do passado da região.'},
+         {e:'📰',n:'Jornal antigo',g:3,d:'Os jornais antigos guardam as notícias de antigamente.'}],
+  bom:'Os objetos guardados nos museus contam a história.'},
+ {t:'mc',p:'Descubra: <i>"Sou um aparelho antigo. Na década de 1920, eu tocava músicas."</i>',o:['Gramofone','Carroça','Jornal','Boletim'],c:0,ex:{1:'A carroça transportava borracha.',2:'O jornal traz notícias.',3:'O boletim é um documento da escola.'},bom:'É o gramofone!'},
+ {t:'mc',p:'A carroça de madeira do Museu do Seringal Vila Paraíso transportava:',o:['"bolas de borracha", feitas com látex','jornais antigos','gramofones','dinossauros'],c:0,ex:{1:'Jornais antigos estão em Diamantina.',2:'O gramofone tocava música.',3:'Os dinossauros da lagoa são réplicas.'},bom:'Bolas de borracha, feitas com látex.'},
+ {t:'mc',p:'Os <b>museus</b> ajudam a:',o:['contar a história do bairro e da comunidade','preparar as refeições da escola','organizar a matrícula','derrubar prédios antigos'],c:0,ex:{1:'Isso é tarefa do merendeiro.',2:'Isso é tarefa da secretaria.',3:'Os museus guardam e preservam a história.'},bom:'Museus contam a história do bairro e da comunidade.'},
+ {t:'mc',p:'Qual lugar conta sobre o <b>modo de vida das pessoas do passado</b>?',o:['O Museu da República','O Parque da Pedra da Cebola'],c:0,ex:{1:'No parque caminhamos e observamos a natureza.'},bom:'O museu, com seus móveis e quadros antigos.'},
+ {t:'mc',p:'Por que um objeto antigo fica guardado em um <b>museu</b>?',o:['Porque ajuda a contar a história e a memória de um lugar','Porque está quebrado e ninguém quer','Porque é um brinquedo novo','Porque é um documento da escola'],c:0,ex:{1:'Ele é guardado com cuidado porque é importante.',2:'Ele é antigo, não novo.',3:'Documentos da escola ficam na secretaria.'},bom:'Os objetos ajudam a contar a história de um bairro, de uma região e até de um país.'},
+ {t:'duo',p:'Verdadeiro ou falso?<div class="frase">"O museu também é um espaço de lazer."</div>',o:VF,c:0,bom:'Verdadeiro: o museu está na lista de espaços de lazer do bairro.'},
+ {t:'duo',p:'Verdadeiro ou falso?<div class="frase">"Só as construções e a natureza contam a história de um bairro."</div>',o:VF,c:1,bom:'Falso: os objetos também contam a história.'}
+],
+3:[
+ {t:'mc',p:'Os <b>nomes dos bairros</b> e as <b>construções antigas</b> são:',o:['pistas da origem desses lugares','espaços de lazer','documentos escolares','réplicas de dinossauros'],c:0,ex:{1:'Espaços de lazer são lugares para se divertir.',2:'Documentos escolares são a matrícula e o boletim.',3:'Réplicas são cópias.'},bom:'São pistas da origem do lugar, do que mudou e do que continua.'},
+ {t:'mc',p:'O nome do bairro <b>Jurunas</b>, em Belém, faz referência:',o:['ao povo indígena Juruna','a um dinossauro','a um gramofone','a uma lagoa'],c:0,ex:{1:'Os dinossauros estão em Salvador.',2:'O gramofone é um objeto de museu.',3:'A lagoa é a de Salvador.'},bom:'O nome conta a origem do bairro.'},
+ {t:'duo',p:'Verdadeiro ou falso?<div class="frase">"MUDANÇA é o que ficou diferente de um tempo para outro."</div>',o:VF,c:0,bom:'Verdadeiro. E PERMANÊNCIA é o que continua.'},
+ {t:'duo',p:'Verdadeiro ou falso?<div class="frase">"PERMANÊNCIA é o que ficou diferente."</div>',o:VF,c:1,bom:'Falso: permanência é o que CONTINUA. O que ficou diferente é mudança.'},
+ {t:'mc',p:'Na tirinha, <b>como Armandinho entendeu</b> a palavra "tombado"?',o:['Para Armandinho, "tombado" significa derrubado','Para Armandinho, "tombado" significa preservado'],c:0,ex:{1:'Preservado é o significado CERTO, mas não foi o que o Armandinho entendeu. Ele achou que o prédio ia ser derrubado, por isso ficou triste.'},bom:'Ele entendeu errado: achou que era derrubado.'},
+ {t:'mc',p:'E qual é o <b>significado correto</b> de "tombado" na tirinha?',o:['Preservado','Derrubado'],c:0,ex:{1:'Derrubado foi o que o Armandinho ENTENDEU, mas está errado.'},bom:'Prédio tombado = prédio preservado.'},
+ {t:'mc',p:'As construções antigas de um bairro ajudam a entender:',o:['como a cidade começou','o boletim do estudante','as regras da sala de aula','a merenda da escola'],c:0,ex:{1:'O boletim é um documento escolar.',2:'Regras de convivência são da escola.',3:'A merenda é preparada pelo merendeiro.'},bom:'Construções antigas são pistas de como a cidade começou.'},
+ {t:'esc',id:'esc1',tit:'✏️ Escrita 1 — Uma MUDANÇA',
+  enun:'Pense nas fotos da Avenida Eduardo Ribeiro, em Manaus, em 1907 e em 2024. Escreva UMA MUDANÇA: algo que ficou diferente na rua.',
+  fonte:'Na foto de 1907 aparecem bonde, carroças e árvores na avenida. Na foto de 2024 aparecem carros, motos, prédios altos e árvores na avenida.',
+  modelo:'Em 1907 passavam bonde e carroças pela avenida. Em 2024 passam carros e motos, e agora tem prédios altos.',
+  chk:['Contei algo que ficou DIFERENTE?','Falei do antes (1907) e do agora (2024)?']},
+ {t:'esc',id:'esc2',tit:'✏️ Escrita 2 — Uma PERMANÊNCIA',
+  enun:'Agora escreva UMA PERMANÊNCIA: algo que continua igual na avenida, de 1907 até 2024.',
+  fonte:'Na foto de 1907 aparecem bonde, carroças e árvores na avenida. Na foto de 2024 aparecem carros, motos, prédios altos e árvores na avenida.',
+  modelo:'A avenida continua no mesmo lugar e as árvores continuam lá nas duas fotos.',
+  chk:['Contei algo que CONTINUA igual?','O que eu escrevi aparece nas duas fotos (1907 e 2024)?']},
+ {t:'esc',id:'esc3',tit:'✏️ Escrita 3 — O nome do bairro conta uma história',
+  enun:'O que o nome do bairro Jurunas pode contar sobre o passado da cidade de Belém?',
+  fonte:'O bairro Jurunas, em Belém, capital do estado do Pará, recebeu seu nome em referência ao povo indígena Juruna. Suas ruas também homenageiam diferentes povos indígenas, refletindo essa origem. O bairro Jurunas, em Belém (Pará), recebeu esse nome em referência ao povo indígena Juruna. As ruas do bairro também homenageiam diferentes povos indígenas.',
+  modelo:'O nome mostra que o povo indígena Juruna faz parte da história desse lugar. O nome do bairro é uma pista da origem dele.',
+  chk:['Falei do povo indígena Juruna?','Expliquei que o nome é uma pista da origem do bairro?']}
+],
+4:[
+ {t:'grp',p:'Quem faz o quê na escola? Leve cada cartão para a pessoa certa:',grupos:['🍲 Merendeiro','🗂️ Diretor e coordenador','📁 Secretaria','👪 Famílias'],
+  itens:[{e:'🍽️',n:'Prepara as refeições',g:0,d:'Quem prepara as refeições é o merendeiro.'},
+         {e:'🏫',n:'Administra a escola',g:1,d:'Diretores e coordenadores administram a escola.'},
+         {e:'👩‍🏫',n:'Organiza o trabalho dos professores',g:1,d:'Diretores e coordenadores organizam o trabalho dos professores.'},
+         {e:'📝',n:'Organiza a matrícula e o boletim',g:2,d:'Na secretaria se organiza a documentação.'},
+         {e:'🤝',n:'Participa de reuniões com os professores',g:3,d:'As famílias participam de reuniões.'},
+         {e:'🎉',n:'Organiza associações de pais e responsáveis',g:3,d:'As famílias podem organizar associações de pais.'}],
+  bom:'Cada pessoa tem a sua função na comunidade escolar.'},
+ {t:'mc',p:'Quem faz parte da <b>comunidade escolar</b>?',o:['Estudantes, professores, funcionários da escola e famílias dos estudantes','Só os professores','Só os estudantes','Só o diretor'],c:0,ex:{1:'Os professores fazem parte, mas não só eles.',2:'Os estudantes fazem parte, mas não só eles.',3:'O diretor faz parte, mas não só ele.'},bom:'Estudantes, professores, funcionários e famílias.'},
+ {t:'mc',p:'Use as palavras do quadro (merendeiro · secretário · diretor):<div class="frase">O ________ prepara as refeições da escola.</div>',o:['merendeiro','secretário','diretor'],c:0,ex:{1:'O secretário organiza os documentos.',2:'O diretor administra a escola.'},bom:'MERENDEIRO! (Ele também pode ser chamado de cozinheiro ou cantineiro, mas a palavra do quadro é merendeiro.)'},
+ {t:'mc',p:'Use as palavras do quadro (merendeiro · secretário · diretor):<div class="frase">O ________ e o coordenador atuam na administração da escola, organizando o trabalho dos funcionários.</div>',o:['diretor','merendeiro','secretário'],c:0,ex:{1:'O merendeiro prepara as refeições.',2:'O secretário organiza os documentos.'},bom:'O diretor e o coordenador administram a escola.'},
+ {t:'mc',p:'Use as palavras do quadro (merendeiro · secretário · diretor):<div class="frase">O ________ é o profissional que organiza toda a documentação da comunidade escolar.</div>',o:['secretário','diretor','merendeiro'],c:0,ex:{1:'O diretor administra a escola.',2:'O merendeiro prepara as refeições.'},bom:'O secretário cuida dos documentos.'},
+ {t:'mc',p:'Qual é o <b>primeiro grupo</b> do qual fazemos parte?',o:['A família','A turma da escola','A vizinhança','O museu do bairro'],c:0,ex:{1:'A turma vem depois, quando vamos para a escola.',2:'A vizinhança também é um grupo, mas o primeiro é a família.',3:'Museu é um lugar, não um grupo.'},bom:'A família: com ela aprendemos a conviver.'},
+ {t:'mc',p:'A <b>vizinhança</b> é formada por:',o:['pessoas que moram perto da nossa casa','os professores da escola','os objetos do museu','os documentos da secretaria'],c:0,ex:{1:'Professores fazem parte da comunidade escolar.',2:'Objetos não formam a vizinhança.',3:'Documentos não formam a vizinhança.'},bom:'Vizinhos moram perto e dividem o mesmo espaço do dia a dia.'},
+ {t:'mc',p:'Na escola, com quem passamos a <b>maior parte do tempo</b>?',o:['Com os colegas de turma','Com o diretor','Com o secretário','Com o merendeiro'],c:0,ex:{1:'Convivemos com o diretor, mas passamos mais tempo com os colegas.',2:'Convivemos com o secretário, mas passamos mais tempo com os colegas.',3:'Convivemos com o merendeiro, mas passamos mais tempo com os colegas.'},bom:'Com os colegas de turma.'},
+ {t:'duo',p:'Verdadeiro ou falso?<div class="frase">"Todos os colegas de turma têm os mesmos gostos e as mesmas opiniões."</div>',o:VF,c:1,bom:'Falso: entre os colegas existem gostos, opiniões, vontades e comportamentos diferentes.'},
+ {t:'duo',p:'Verdadeiro ou falso?<div class="frase">"O jeito como cada colega se comporta pode ajudar ou dificultar o aprendizado de todos."</div>',o:VF,c:0,bom:'Verdadeiro.'},
+ {t:'duo',p:'Verdadeiro ou falso?<div class="frase">"Na escola, é importante usar sempre as expressões \'por favor\' e \'obrigado\'."</div>',o:VF,c:0,bom:'Verdadeiro: isso ajuda a deixar o ambiente da escola melhor.'}
+],
+5:[
+ {t:'mc',p:'Para estudar em uma escola, é necessário fazer:',o:['a matrícula','o boletim','uma réplica','um museu'],c:0,ex:{1:'O boletim mostra as notas, depois de estudar.',2:'Réplica é uma cópia.',3:'Museu não tem a ver com entrar na escola.'},bom:'A matrícula mostra que você faz parte da comunidade escolar.'},
+ {t:'mc',p:'A ficha de matrícula é um documento pessoal?',o:['Sim, pois apresenta informações a respeito de uma pessoa.','Não, pois apresenta informações a respeito de uma escola.'],c:0,ex:{1:'A ficha tem nome, data de nascimento e endereço do estudante: são informações de uma PESSOA.'},bom:'É um documento pessoal.'},
+ {t:'grp',p:'Onde aparece cada informação? Na <b>ficha de matrícula</b> ou no <b>boletim</b>?',grupos:['📝 Ficha de matrícula','📊 Boletim'],
+  itens:[{e:'🏠',n:'Endereço',g:0,d:'O endereço aparece na ficha de matrícula.'},
+         {e:'📞',n:'Telefone',g:0,d:'O telefone aparece na ficha de matrícula.'},
+         {e:'🎂',n:'Data de nascimento',g:0,d:'A data de nascimento aparece na ficha de matrícula.'},
+         {e:'🌎',n:'Nacionalidade',g:0,d:'A nacionalidade aparece na ficha de matrícula.'},
+         {e:'💯',n:'Notas do estudante',g:1,d:'As notas aparecem no boletim.'},
+         {e:'📚',n:'Nomes dos componentes',g:1,d:'Os componentes (Português, História…) aparecem no boletim.'}],
+  bom:'Matrícula = dados da pessoa · Boletim = desempenho do estudante.'},
+ {t:'grp',p:'No <b>boletim antigo</b> do livro, o que <b>aparece</b> e o que <b>não aparece</b>?',grupos:['✅ Aparece','❌ Não aparece'],
+  itens:[{e:'🧒',n:'Nome do estudante',g:0,d:'O nome do estudante aparece no boletim.'},
+         {e:'🏫',n:'Nome da escola',g:0,d:'O nome da escola aparece lá em cima do boletim.'},
+         {e:'📚',n:'Nomes dos componentes',g:0,d:'Português, Aritmética, História, Geografia… aparecem no boletim.'},
+         {e:'💯',n:'Notas do estudante',g:0,d:'As notas aparecem no boletim.'},
+         {e:'🏠',n:'Endereço do estudante',g:1,d:'O endereço não aparece no boletim (ele fica na ficha de matrícula).'},
+         {e:'🎂',n:'Data de nascimento',g:1,d:'A data de nascimento não aparece no boletim (fica na ficha de matrícula).'}],
+  bom:'No boletim aparecem 4 coisas: nome do estudante, nome da escola, componentes e notas.'},
+ {t:'mc',p:'O <b>boletim</b> traz informações sobre:',o:['o desempenho do estudante','o endereço da praça','as músicas da década de 1920','os dinossauros da lagoa'],c:0,ex:{1:'Praça é espaço de lazer, não está no boletim.',2:'Músicas antigas eram tocadas no gramofone.',3:'Os dinossauros são réplicas na lagoa.'},bom:'O boletim mostra o desempenho e como a escola está organizada.'},
+ {t:'mc',p:'Na escola, onde a ficha de matrícula fica guardada?',o:['Na secretaria','Na cozinha','No pátio','Na praça do bairro'],c:0,ex:{1:'Na cozinha o merendeiro prepara as refeições.',2:'O pátio não guarda documentos.',3:'A praça é um espaço de lazer.'},bom:'A secretaria guarda a matrícula e o boletim.'},
+ {t:'mc',p:'Marque a alternativa <b>correta</b>:',o:['Os documentos escolares registram informações importantes sobre os estudantes e a escola.','Os documentos escolares servem apenas para informar as notas dos estudantes.','A ficha de matrícula e o boletim não precisam ser guardados pela escola.'],c:0,ex:{1:'Não é "apenas" as notas: a matrícula tem os dados do estudante, por exemplo.',2:'Precisam, sim! A secretaria guarda esses documentos.'},bom:'Os documentos escolares registram informações importantes.'},
+ {t:'mc',p:'Os documentos escolares também podem ser usados para conhecer:',o:['como a escola funcionava em outras épocas','o caminho até a Lagoa dos Dinossauros','como se toca o gramofone','o nome do bairro Jurunas'],c:0,ex:{1:'Isso não está nos documentos da escola.',2:'Isso não está nos documentos da escola.',3:'Isso não está nos documentos da escola.'},bom:'Como o boletim antigo das décadas de 1920 e 1930!'}
+],
+6:[
+ {t:'grp',p:'É <b>direito</b> ou <b>dever</b> do estudante?',grupos:['✅ Direito','📌 Dever'],
+  itens:[{e:'🏫',n:'Ter sala de aula adequada para estudar',g:0,d:'É um direito.'},
+         {e:'🧹',n:'Cuidar da limpeza da escola',g:1,d:'É um dever.'},
+         {e:'🩹',n:'Receber cuidados quando se machuca',g:0,d:'É um direito.'},
+         {e:'👂',n:'Prestar atenção às aulas e fazer as atividades',g:1,d:'É um DEVER! Muita atenção a este.'},
+         {e:'📚',n:'Receber educação de qualidade',g:0,d:'É um direito.'},
+         {e:'🪑',n:'Conservar as carteiras e os materiais',g:1,d:'É um dever.'},
+         {e:'🗣️',n:'Expressar sua opinião de maneira respeitosa',g:0,d:'É um direito.'},
+         {e:'👫',n:'Participar das atividades em grupo',g:1,d:'É um dever.'},
+         {e:'🤗',n:'Ser respeitado por professores, funcionários e colegas',g:0,d:'É um direito.'},
+         {e:'🙋',n:'Respeitar os colegas, o professor e os funcionários',g:1,d:'É um dever.'}],
+  bom:'Direito = o que merecemos ter · Dever = o que devemos cumprir.'},
+ {t:'grp',p:'Atitude <b>respeitosa</b> (azul) ou <b>desrespeitosa</b> (vermelho)?',grupos:['💙 Respeitosa','❤️ Desrespeitosa'],
+  itens:[{e:'🗯️',n:'Falar na sala de aula sem aguardar a sua vez',g:1,d:'É desrespeitosa: precisamos esperar a nossa vez.'},
+         {e:'🗑️',n:'Jogar o lixo na lixeira',g:0,d:'É respeitosa.'},
+         {e:'🤝',n:'Estar disposto a ajudar os colegas',g:0,d:'É respeitosa.'},
+         {e:'👋',n:'Dizer bom-dia aos funcionários da escola',g:0,d:'É respeitosa.'},
+         {e:'😠',n:'Fazer comentários maldosos sobre outro colega',g:1,d:'É desrespeitosa.'}],
+  bom:'Atitudes respeitosas deixam a escola um lugar melhor para todos.'},
+ {t:'duo',p:'Verdadeiro ou falso?<div class="frase">"Falar ao mesmo tempo que o professor ajuda a aprender melhor."</div>',o:VF,c:1,bom:'Falso: levantamos a mão e esperamos a nossa vez.'},
+ {t:'duo',p:'Verdadeiro ou falso?<div class="frase">"Estudantes, professores e funcionários da escola têm o direito de serem respeitados."</div>',o:VF,c:0,bom:'Verdadeiro.'},
+ {t:'duo',p:'Verdadeiro ou falso?<div class="frase">"Jogar o lixo no chão da sala de aula é um direito do estudante."</div>',o:VF,c:1,bom:'Falso: cuidar da limpeza da escola é um dever.'},
+ {t:'duo',p:'⚠️ Muita atenção nesta! Verdadeiro ou falso?<div class="frase">"Prestar atenção nas aulas e fazer as atividades são deveres de todos os estudantes."</div>',o:VF,c:0,bom:'VERDADEIRO! Prestar atenção às aulas e fazer as atividades é um dever.'},
+ {t:'duo',p:'Verdadeiro ou falso?<div class="frase">"Os estudantes podem sair da sala de aula a qualquer momento sem pedir autorização."</div>',o:VF,c:1,bom:'Falso: na escola seguimos regras de convivência e pedimos licença.'},
+ {t:'mc',p:'Para que servem as <b>regras de convivência</b> na escola?',o:['Para que todos se sintam respeitados e resolvam os conflitos de maneira gentil','Para que cada um faça o que quiser','Para que só os professores sejam respeitados','Para que ninguém possa falar'],c:0,ex:{1:'As regras são justamente para conviver bem com todos.',2:'Todos merecem respeito.',3:'Todos podem falar, esperando a sua vez.'},bom:'Regras de convivência = todos respeitados, vivendo em harmonia.'},
+ {t:'mc',p:'Qual é um exemplo de <b>regra de convivência</b>?',o:['Levantar a mão para falar e esperar a sua vez','Falar ao mesmo tempo que todo mundo','Interromper quem está falando','Sair da sala sem pedir licença'],c:0,ex:{1:'Isso atrapalha a aula.',2:'Isso é desrespeitoso.',3:'Precisamos pedir licença.'},bom:'Levantar a mão, sem interromper quem está falando.'},
+ {t:'mc',p:'Leia o trecho do livro:'+TEXTO_LAURA+'Nessa história, quais personagens da <b>comunidade escolar</b> aparecem?',o:['Professora, estudantes e orientadora','Cozinheiro, diretora e coordenador','Professora, cozinheiro e diretora','Só estudantes'],c:0,ex:{1:'Nenhum deles aparece na história.',2:'A professora aparece, mas o cozinheiro e a diretora não.',3:'Aparecem também a professora (Laura) e a orientadora (Joana).'},bom:'A professora Laura, os estudantes e a orientadora Joana.'},
+ {t:'mc',p:'No texto, "Lucinha ficou <b>irada</b>". O que quer dizer "irada"?',o:['Com raiva','Muito feliz','Com sono','Com fome'],c:0,ex:{1:'Ela rasgou o desenho: não estava feliz.',2:'Ela não estava com sono.',3:'Fome não tem a ver com a história.'},bom:'Irada = com raiva.'},
+ {t:'mc',p:'Como a Lucinha poderia ter sido <b>mais respeitosa</b>?',o:['Dizendo o que sentiu, de maneira respeitosa, sem rasgar o desenho','Rasgando o desenho de outro colega também','Empurrando um colega','Gritando com a turma toda'],c:0,ex:{1:'Isso também seria desrespeitoso.',2:'Empurrar é desrespeitoso.',3:'Gritar não resolve o conflito de maneira gentil.'},bom:'Expressar a opinião de maneira respeitosa é um direito, e resolver conflitos de maneira gentil é uma regra de convivência.'},
+ {t:'mc',p:'O <b>ECA</b> (Estatuto da Criança e do Adolescente) reúne regras que garantem às crianças:',o:['direitos como vida, saúde, educação, esporte e lazer','só deveres, nenhum direito','o direito de não ir à escola','o direito de jogar lixo no chão'],c:0,ex:{1:'O ECA garante direitos às crianças.',2:'A criança tem o direito de ir à escola.',3:'Cuidar da limpeza é um dever.'},bom:'Vida, saúde, liberdade, respeito, dignidade, convivência familiar, educação, cultura, esporte e lazer.'},
+ {t:'mc',p:'Quem deve garantir que a criança tenha uma <b>alimentação saudável</b>?',o:['A família','O museu','A praça','O boletim'],c:0,ex:{1:'O museu conta a história do bairro.',2:'A praça é um espaço de lazer.',3:'O boletim é um documento.'},bom:'A família deve garantir uma alimentação saudável.'}
+]
+};
+
+/* --- Desafio Final (10 questões) --- */
+var FINAL=[
+ {p:'O que é um <b>espaço de lazer</b>?',o:['Uma área onde a comunidade pode se divertir','Um documento que mostra as notas','O lugar onde se preparam as refeições da escola','Uma regra de convivência'],c:0,ex:{1:'Isso é o boletim.',2:'Isso é a cozinha da escola.',3:'Regra de convivência é outra coisa.'}},
+ {p:'O Parque da Pedra da Cebola e o Museu da República são espaços de lazer?',o:['Sim, os dois são espaços de lazer','Não, nenhum dos dois','Só o parque','Só o museu'],c:0,ex:{1:'Os dois são!',2:'O museu também é espaço de lazer.',3:'O parque também é espaço de lazer.'}},
+ {p:'Além das construções e da natureza, o que ajuda a contar a história de um bairro?',o:['Objetos como pinturas, fotos, mapas e móveis','Nada mais','Só os prédios novos','Só os carros da rua'],c:0,ex:{1:'Os objetos também contam a história.',2:'Prédios novos não mostram o passado.',3:'Os objetos guardados nos museus contam a história.'}},
+ {p:'Na tirinha do Armandinho, qual é o <b>significado correto</b> da palavra "tombado"?',o:['Preservado','Derrubado','Pintado','Vendido'],c:0,ex:{1:'Derrubado foi o que o Armandinho entendeu, mas está errado.',2:'Não tem a ver com pintar.',3:'Não tem a ver com vender.'}},
+ {p:'O nome do bairro <b>Jurunas</b>, em Belém, conta sobre o passado porque lembra:',o:['o povo indígena Juruna','uma lagoa com dinossauros','um gramofone antigo','um boletim escolar'],c:0,ex:{1:'A Lagoa dos Dinossauros fica em Salvador.',2:'O gramofone é um objeto de museu.',3:'O boletim é um documento da escola.'}},
+ {p:'A <b>comunidade escolar</b> é formada por:',o:['estudantes, professores, funcionários e famílias dos estudantes','só os estudantes','só os professores e o diretor','só as famílias'],c:0,ex:{1:'Faltam professores, funcionários e famílias.',2:'Faltam estudantes, funcionários e famílias.',3:'Faltam estudantes, professores e funcionários.'}},
+ {p:'Complete com a palavra do quadro (merendeiro · secretário · diretor): <i>"O ______ prepara as refeições da escola."</i>',o:['merendeiro','secretário','diretor'],c:0,ex:{1:'O secretário organiza os documentos.',2:'O diretor administra a escola.'}},
+ {p:'A <b>matrícula</b> é:',o:['o documento pessoal que permite ao estudante frequentar a escola','um espaço de lazer do bairro','um objeto antigo de museu','uma regra de convivência'],c:0,ex:{1:'Espaço de lazer é para se divertir.',2:'Objetos de museu contam a história do bairro.',3:'Regra de convivência é outra coisa.'}},
+ {p:'O que aparece no <b>boletim antigo</b> do livro?',o:['Nome do estudante, nome da escola, nomes dos componentes e notas','Endereço e data de nascimento do estudante','Só o nome do estudante','Só o telefone da família'],c:0,ex:{1:'Isso fica na ficha de matrícula.',2:'Aparecem mais coisas além do nome!',3:'O telefone fica na ficha de matrícula.'}},
+ {p:'"Prestar atenção nas aulas e fazer as atividades" é:',o:['um dever de todos os estudantes','um direito que o estudante pode deixar de lado','uma coisa que não precisa fazer','um espaço de lazer'],c:0,ex:{1:'É um DEVER: uma obrigação do estudante.',2:'É obrigação, precisa fazer.',3:'Não é um lugar.'}}
+];
+var SEMENTE="bx3"; /* escolhida para espalhar a resposta certa entre A, B, C e D */
+
+/* =========================================================
+   ARMAZENAMENTO (à prova de bloqueio)
+   ========================================================= */
+var KEY='bairro_escola_2ano_v1';
+var TKEY='bairro_escola_2ano_trilha_v1';
+var MEM={};
+function lsGet(k){ try{ return localStorage.getItem(k); }catch(e){ return MEM[k]||null; } }
+function lsSet(k,v){ try{ localStorage.setItem(k,v); }catch(e){ MEM[k]=v; } }
+function lsDel(k){ try{ localStorage.removeItem(k); }catch(e){} delete MEM[k]; }
+function letras(){ var L='ABCDEFGHJKLMNPQRSTUVWXYZ'; return L[Math.floor(Math.random()*L.length)]+L[Math.floor(Math.random()*L.length)]; }
+function novoEstado(){
+  return { fases:{}, escrita:{}, mural:{concluido:false,maxPct:0},
+           finalScore:null, finalCode:null, finalDet:null, finalConc:false, finalEm:null,
+           codeLetters:null, quando:null };
+}
+function arrumar(o){
+  if(!o.fases)o.fases={}; if(!o.escrita)o.escrita={};
+  if(!o.mural)o.mural={concluido:false,maxPct:0};
+  if(!o.codeLetters)o.codeLetters=letras();
+  return o;
+}
+var S=novoEstado(), T={liberadoPelosPais:false,liberadoEm:null};
+(function carregar(){
+  var raw=lsGet(KEY);
+  if(raw){ try{ var o=JSON.parse(raw); if(o&&typeof o==='object') S=o; }catch(e){} }
+  arrumar(S);
+  var rt=lsGet(TKEY);
+  if(rt){ try{ var t=JSON.parse(rt); if(t&&typeof t==='object') T=t; }catch(e){} }
+})();
+function save(){
+  S.quando=new Date().toLocaleString('pt-BR');
+  lsSet(KEY,JSON.stringify(S));
+  var el=document.getElementById('saveInfo');
+  if(el) el.textContent='Progresso salvo automaticamente · '+S.quando;
+}
+function saveT(){ lsSet(TKEY,JSON.stringify(T)); }
+
+/* =========================================================
+   UTILIDADES (sem áudio)
+   ========================================================= */
+function modal(title,msg,onOk,withCancel){
+  document.getElementById('mdTitle').innerHTML=title;
+  document.getElementById('mdMsg').innerHTML=msg;
+  var m=document.getElementById('mask'), ok=document.getElementById('mdOk'), ca=document.getElementById('mdCancel');
+  ca.style.display=withCancel?'block':'none';
+  ok.onclick=function(){ m.classList.remove('on'); if(onOk)onOk(); };
+  ca.onclick=function(){ m.classList.remove('on'); };
+  m.classList.add('on');
+}
+function confetti(n){
+  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  var cores=['#3FA34D','#F28C28','#3B6FD4','#8E5BD0','#FFFFFF'], i;
+  for(i=0;i<(n||30);i++){ (function(i){
+    var d=document.createElement('div'); d.className='conf';
+    d.style.left=(Math.random()*100)+'vw'; d.style.background=cores[i%cores.length];
+    d.style.animation='fall '+(1.6+Math.random()*1.2)+'s linear forwards'; d.style.animationDelay=(Math.random()*.5)+'s';
+    document.body.appendChild(d); setTimeout(function(){ if(d.parentNode)d.parentNode.removeChild(d); },3600);
+  })(i); }
+}
+function hashStr(s){ var h=5381,i; for(i=0;i<s.length;i++){ h=((h*33)+s.charCodeAt(i))>>>0; } return h; }
+function mulberry32(a){ return function(){ a|=0; a=a+0x6D2B79F5|0;
+  var t=Math.imul(a^a>>>15,1|a); t=t+Math.imul(t^t>>>7,61|t)^t; return ((t^t>>>14)>>>0)/4294967296; }; }
+function shuffleSeeded(arr,key){
+  var r=mulberry32(hashStr(key)), a=arr.slice(), i,j,t;
+  for(i=a.length-1;i>0;i--){ j=Math.floor(r()*(i+1)); t=a[i]; a[i]=a[j]; a[j]=t; }
+  return a;
+}
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function dataBR(iso){ try{ return new Date(iso).toLocaleString('pt-BR'); }catch(e){ return iso; } }
+
+/* =========================================================
+   TRILHA COM CADEADOS
+   etapas 0..5 = paradas 1..6 · 6 = Cartaz · 7 = Desafio Final
+   ========================================================= */
+var ETAPAS=[
+ {nome:TITULOS[1]},{nome:TITULOS[2]},{nome:TITULOS[3]},{nome:TITULOS[4]},{nome:TITULOS[5]},{nome:TITULOS[6]},
+ {nome:'🗺️ Cartaz do Caminho'},{nome:'🏆 Desafio Final'}
+];
+function feita(i){
+  if(i<=5){ var f=S.fases[i+1]; return !!(f&&f.concluido); }
+  if(i===6) return !!(S.mural&&S.mural.concluido);
+  return !!S.finalConc;
+}
+function quandoFeita(i){
+  if(i<=5){ var f=S.fases[i+1]; return f?f.concluidoEm:null; }
+  if(i===6) return S.mural.concluidoEm||null;
+  return S.finalEm||null;
+}
+function aberta(i){ return i===0 || T.liberadoPelosPais || feita(i) || feita(i-1); }
+function entregasFaltando(){ var n=0,i; for(i=0;i<=5;i++) if(!feita(i)) n++; return n; }
+function fraseTrava(i){
+  if(i>=1&&i<=5) return '🔒 Destrava quando você concluir a parada '+i+' — '+TITULOS[i]+'.';
+  if(i===6) return '🔒 Destrava quando você concluir as 6 paradas (faltam '+entregasFaltando()+').';
+  return '🔒 Destrava quando você ler o Cartaz do Caminho até o fim e clicar em "✅ Li o cartaz até o fim".';
+}
+function openStep(i){
+  if(!aberta(i)){ modal('🔒 Esta etapa ainda está trancada',fraseTrava(i).replace('🔒 ','')); return; }
+  if(i<=5) startP(i+1);
+  else if(i===6) abrirMural();
+  else startFinal();
+}
+
+function go(id){
+  var all=document.querySelectorAll('.screen'), i;
+  for(i=0;i<all.length;i++) all[i].classList.remove('on');
+  document.getElementById(id).classList.add('on');
+  window.scrollTo(0,0);
+  if(id==='scr-menu') refreshMenu();
+  if(id==='scr-mural') checarRolagem();
+}
+
+function refreshMenu(){
+  var i, n=0, h='', primeiroNovo=-1;
+  for(i=1;i<=6;i++){
+    var on=feita(i-1); if(on) n++;
+    document.getElementById('ov'+i).classList.toggle('on',on);
+  }
+  document.getElementById('trayLabel').textContent = n===0 ? '🎒 Sua mochila (nenhum adesivo ainda)' : ('🎒 Sua mochila: '+n+' de 6 adesivos');
+  for(i=1;i<ETAPAS.length;i++){ if(aberta(i)&&!feita(i)&&!T.liberadoPelosPais){ primeiroNovo=i; break; } }
+  for(i=0;i<ETAPAS.length;i++){
+    var ab=aberta(i), fe=feita(i), cls='btn';
+    if(i===6) cls+=' green'; if(i===7) cls+=' yellow';
+    if(!ab) cls='btn locked';
+    if(i===primeiroNovo) cls+=' glow';
+    var rotulo=(i<=5?(i+1)+'. ':'')+ETAPAS[i].nome;
+    var selo= fe ? '<span class="selo ok">✅ Concluído</span>' : (i===primeiroNovo ? '<span class="selo novo">✨ Novo destravado</span>' : '');
+    h+='<button class="'+cls+'" id="mb'+i+'" onclick="openStep('+i+')">'+(ab?'':'🔒 ')+rotulo+selo+'</button>';
+    var desc = i<=5 ? DESC[i+1] : (i===6 ? 'O cartaz de revisão para ler com um adulto na véspera.' : '10 questões misturando tudo. Gera o código para os pais.');
+    h+='<p class="menu-desc'+(ab?'':' lock')+'" id="md'+i+'">'+(ab?desc:fraseTrava(i))+'</p>';
+  }
+  document.getElementById('menuList').innerHTML=h;
+  document.getElementById('paisSelo').innerHTML = T.liberadoPelosPais
+    ? '<div class="paisbox">🔓 Trilha liberada pelos pais — todos os materiais estão abertos. <button class="btn ghost small" style="margin:6px 0 0;" onclick="trancarDeNovo()">🔒 Trancar de novo</button></div>' : '';
+  if(S.quando) document.getElementById('saveInfo').textContent='Progresso salvo automaticamente · '+S.quando;
+}
+
+/* =========================================================
+   PÍLULAS
+   ========================================================= */
+var P={fase:1,idx:0};
+function startP(p){
+  P={fase:p,idx:0};
+  document.getElementById('pillTitle').textContent=PILLS[p].t;
+  renderPill(); go('scr-pill');
+}
+function renderPill(){
+  var lista=PILLS[P.fase].p, it=lista[P.idx], i, h='';
+  h+='<div class="pill-emoji">'+it.e+'</div><div class="pill-text">'+it.x+'</div>';
+  if(it.y) h+='<div class="pill-extra">'+it.y+'</div>';
+  document.getElementById('pillBox').innerHTML=h;
+  var d=''; for(i=0;i<lista.length;i++) d+='<i class="'+(i<=P.idx?'on':'')+'"></i>';
+  document.getElementById('pillDots').innerHTML=d;
+  var bt=document.getElementById('pillNext');
+  bt.textContent=(P.idx===lista.length-1)?'Agora vamos treinar! 🐶':'Entendi! Próximo ➡️';
+  bt.onclick=function(){ if(P.idx<lista.length-1){ P.idx++; renderPill(); window.scrollTo(0,0); } else startGame(P.fase); };
+}
+
+/* =========================================================
+   MOTOR DOS MINIJOGOS
+   ========================================================= */
+var G={};
+function area(){ return document.getElementById('gameArea'); }
+function fbEl(){ return document.getElementById('gameFb'); }
+function nextBtn(){ return document.getElementById('gameNext'); }
+function setCount(t){ document.getElementById('gameCount').textContent=t; }
+function showFb(ok,html){ var f=fbEl(); f.className='fb on '+(ok?'good':'bad'); f.innerHTML=html; }
+function clearFb(){ var f=fbEl(); f.className='fb'; f.innerHTML=''; }
+
+function ordemOpcoes(q,key){
+  var idx=q.o.map(function(_,i){return i;});
+  return q.fixo ? idx : shuffleSeeded(idx,key);
+}
+function renderMC(q,key,onPick){
+  var ordem=ordemOpcoes(q,key), h='', k;
+  h+='<div class="q-text">'+q.p+'</div>';
+  if(q.vis) h+=q.vis;
+  if(q.t==='duo'){
+    h+='<div class="duo">';
+    for(k=0;k<q.o.length;k++) h+='<button class="opt" data-oi="'+k+'">'+q.o[k]+'</button>';
+    h+='</div>';
+  } else {
+    for(k=0;k<ordem.length;k++) h+='<button class="opt" data-oi="'+ordem[k]+'">'+q.o[ordem[k]]+'</button>';
+  }
+  area().innerHTML=h;
+  var btns=area().querySelectorAll('.opt'), i;
+  for(i=0;i<btns.length;i++) btns[i].addEventListener('click',function(){ onPick(this,parseInt(this.getAttribute('data-oi'),10)); });
+}
+function markMC(btn,oi,q){
+  var btns=area().querySelectorAll('.opt'), i, acertou=(oi===q.c);
+  for(i=0;i<btns.length;i++){
+    var idx=parseInt(btns[i].getAttribute('data-oi'),10); btns[i].disabled=true;
+    if(idx===q.c) btns[i].classList.add('ok'); else if(btns[i]===btn) btns[i].classList.add('no');
+  }
+  if(acertou) showFb(true,'✅ <b>Boa! É isso mesmo.</b> '+(q.bom||''));
+  else showFb(false,'💛 <b>Quase! Vamos aprender juntos.</b><br>'+((q.ex&&q.ex[oi])?q.ex[oi]+'<br>':'')+
+    'A resposta certa é <b>'+q.o[q.c]+'</b>. '+(q.bom||''));
+  return acertou;
+}
+
+function startGame(p){
+  for(var k in S.escrita){ if(S.escrita[k]){ S.escrita[k].contado=false; S.escrita[k].pontuado=false; } }
+  G={p:p, idx:0, acertos:0, total:0};
+  document.getElementById('gameTitle').textContent=TITULOS[p]+' — hora de treinar';
+  go('scr-game'); g_render();
+}
+function g_render(){
+  clearFb(); nextBtn().style.display='none';
+  var lista=JOGO[G.p], it=lista[G.idx];
+  setCount('Desafio '+(G.idx+1)+' de '+lista.length+' · ⭐ '+G.acertos);
+  if(it.t==='grp') return g_grp(it);
+  if(it.t==='esc') return g_esc(it);
+  renderMC(it,'p'+G.p+'q'+G.idx+SEMENTE,function(btn,oi){
+    if(markMC(btn,oi,it)) G.acertos++;
+    G.total++; g_next();
+  });
+}
+function g_next(){
+  var lista=JOGO[G.p];
+  nextBtn().style.display='block';
+  nextBtn().textContent=(G.idx===lista.length-1)?'Terminar a parada 🎒':'Continuar ➡️';
+  nextBtn().onclick=function(){
+    if(G.idx<lista.length-1){ G.idx++; g_render(); window.scrollTo(0,0); }
+    else winFase(G.p,G.acertos,G.total);
+  };
+}
+
+/* separar em grupos: um item por vez, a criança toca no grupo certo */
+function g_grp(it){
+  var h='', k;
+  G.grpOrdem=shuffleSeeded(it.itens.map(function(_,i){return i;}),'grp'+G.p+'_'+G.idx);
+  G.grpPos=0; G.grpErros=0; G.grpItem=it;
+  h+='<div class="q-text">'+it.p+'</div><div class="grp-card" id="grpCard"></div><div class="grp-btns">';
+  for(k=0;k<it.grupos.length;k++) h+='<button class="opt grpb" data-g="'+k+'">'+it.grupos[k]+'</button>';
+  h+='</div><div class="baskets">';
+  for(k=0;k<it.grupos.length;k++) h+='<div class="basket"><b>'+it.grupos[k]+'</b><div id="bk'+k+'"></div></div>';
+  h+='</div>';
+  area().innerHTML=h;
+  var bts=area().querySelectorAll('.grpb'), i;
+  for(i=0;i<bts.length;i++) bts[i].addEventListener('click',function(){ grpPick(this,parseInt(this.getAttribute('data-g'),10)); });
+  grpShow();
+}
+function grpShow(){
+  var it=G.grpItem, x=it.itens[G.grpOrdem[G.grpPos]];
+  document.getElementById('grpCard').innerHTML='<div class="pill-emoji">'+x.e+'</div><div class="pill-text">'+x.n+'</div><div class="menu-desc" style="margin:4px 0 0;">'+(G.grpPos+1)+' de '+it.itens.length+'</div>';
+}
+function grpPick(btn,k){
+  var it=G.grpItem; if(G.grpPos>=it.itens.length) return;
+  var x=it.itens[G.grpOrdem[G.grpPos]];
+  if(k===x.g){
+    document.getElementById('bk'+k).innerHTML+='<span class="chip">'+x.e+' '+x.n+'</span>';
+    G.grpPos++; clearFb();
+    if(G.grpPos===it.itens.length){
+      var bts=area().querySelectorAll('.grpb'), i; for(i=0;i<bts.length;i++) bts[i].disabled=true;
+      document.getElementById('grpCard').innerHTML='<div class="pill-emoji">📦</div><div class="pill-text">Tudo separado!</div>';
+      G.total++;
+      if(G.grpErros===0){ G.acertos++; showFb(true,'✅ <b>Perfeito, tudo no lugar certo de primeira!</b> '+it.bom); }
+      else showFb(true,'✅ <b>Completou!</b> Você errou '+G.grpErros+' vez(es) no caminho. '+it.bom);
+      g_next();
+    } else grpShow();
+  } else {
+    G.grpErros++;
+    btn.classList.remove('shake'); void btn.offsetWidth; btn.classList.add('shake');
+    setTimeout(function(){ btn.classList.remove('shake'); },400);
+    showFb(false,'💛 <b>Quase!</b> '+x.d+' Tente outro grupo.');
+  }
+}
+
+/* escrita com anticópia e autoavaliação guiada */
+function norm(s){
+  return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')
+    .replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();
+}
+function palavras(s){ var n=norm(s); return n?n.split(' '):[]; }
+function ehTranscricao(resp,fonte){
+  var a=palavras(resp), b=palavras(fonte), i, j;
+  if(a.length<4) return false;
+  var maiorSeq=0, emSeq=0, marcado=[];
+  for(i=0;i<a.length;i++) marcado.push(false);
+  for(i=0;i<a.length;i++){
+    for(j=0;j<b.length;j++){
+      var k=0; while(i+k<a.length && j+k<b.length && a[i+k]===b[j+k]) k++;
+      if(k>maiorSeq) maiorSeq=k;
+      if(k>=5){ var z; for(z=0;z<k;z++) marcado[i+z]=true; }
+    }
+  }
+  for(i=0;i<marcado.length;i++) if(marcado[i]) emSeq++;
+  return (maiorSeq>=8) || (emSeq/a.length>0.60);
+}
+function g_esc(it){
+  var sv=S.escrita[it.id]||{}, h='';
+  h+='<div class="wbox'+(sv.transcrita?' red':'')+'" id="wb"><h4>'+it.tit+'</h4>';
+  h+='<p style="font-weight:700;font-size:.97rem;">'+it.enun+'</p>';
+  h+='<textarea id="wtxt" placeholder="Escreva aqui com as suas palavras...">'+esc(sv.resp||'')+'</textarea>';
+  h+='<div id="wavisos"></div><button class="btn green small" id="wchk" onclick="escChk()">Conferir ✅</button><div id="wdepois"></div></div>';
+  area().innerHTML=h; G.tentativa=0; G.escItem=it;
+}
+function escChk(){
+  var it=G.escItem, txt=document.getElementById('wtxt').value.trim();
+  if(txt.length<15){ document.getElementById('wavisos').innerHTML='<div class="warn">✏️ Escreva um pouquinho mais: uma ou duas frases contando do seu jeito.</div>'; return; }
+  var copiou=ehTranscricao(txt,it.enun+' '+(it.fonte||''));
+  var reg0=S.escrita[it.id]||{};
+  if(G.tentativa===1 && reg0.tentou===txt){
+    document.getElementById('wavisos').innerHTML='<div class="warn">✏️ Você ainda não mudou nada. Troque algumas palavras e escreva do SEU jeito antes de conferir de novo.</div>';
+    document.getElementById('wtxt').focus(); return;
+  }
+  G.tentativa=(G.tentativa||0)+1;
+  if(copiou && G.tentativa===1){
+    S.escrita[it.id]=S.escrita[it.id]||{}; S.escrita[it.id].tentou=txt; save();
+    document.getElementById('wavisos').innerHTML='<div class="warn">🐶 Boa parte da sua resposta está igualzinha ao texto.<br>Tente reescrever <b>com as suas palavras</b>: conte do SEU jeito, como se fosse para um amigo, sem olhar o texto. Pode ficar curtinho e simples, o que vale é ser <b>SEU</b>.</div>';
+    document.getElementById('wtxt').focus(); return;
+  }
+  var reg=S.escrita[it.id]||{}; reg.resp=txt; reg.transcrita=!!copiou; reg.chk=reg.chk||{}; reg.quando=new Date().toISOString();
+  S.escrita[it.id]=reg; save();
+  document.getElementById('wchk').disabled=true;
+  document.getElementById('wavisos').innerHTML = copiou ? '<div class="redflag">🔴 Esta resposta ficou marcada para revisar: continua muito parecida com o texto. Se reescrever com as suas palavras, a marca some.</div>' : '';
+  document.getElementById('wb').classList.toggle('red',!!copiou);
+  var h='<div class="modelo"><b>Resposta modelo (um jeito possível):</b><br>'+it.modelo+'</div><div class="chk"><p style="font-weight:900;">Agora confira a SUA resposta:</p>', i;
+  for(i=0;i<it.chk.length;i++){
+    h+='<p>'+it.chk[i]+'</p><div class="yn"><button id="y'+i+'" onclick="escMarca('+i+',1)">Sim 👍</button><button id="n'+i+'" onclick="escMarca('+i+',0)">Ainda não 🤔</button></div>';
+  }
+  h+='</div><div id="chkStatus"></div><button class="btn ghost small" onclick="escReescrever()">✏️ Quero reescrever</button>';
+  document.getElementById('wdepois').innerHTML=h;
+  for(i=0;i<it.chk.length;i++){ var v=reg.chk[i];
+    if(v===1) document.getElementById('y'+i).classList.add('sel-y'); if(v===0) document.getElementById('n'+i).classList.add('sel-n'); }
+  escStatus();
+}
+function escMarca(i,v){
+  var it=G.escItem, reg=S.escrita[it.id]; reg.chk=reg.chk||{}; reg.chk[i]=v; save();
+  document.getElementById('y'+i).classList.toggle('sel-y',v===1);
+  document.getElementById('n'+i).classList.toggle('sel-n',v===0);
+  escStatus();
+}
+function escStatus(){
+  var it=G.escItem, reg=S.escrita[it.id], i, todos=true, algumNao=false;
+  for(i=0;i<it.chk.length;i++){ if(reg.chk[i]===undefined) todos=false; if(reg.chk[i]===0) algumNao=true; }
+  var el=document.getElementById('chkStatus');
+  if(!todos){ el.innerHTML='<div class="warn">Responda Sim ou Ainda não em cada item para continuar.</div>'; nextBtn().style.display='none'; return; }
+  if(!reg.contado){ reg.contado=true; G.total++; }
+  if(algumNao||reg.transcrita){ reg.status='revisar'; el.innerHTML='<div class="warn">🔁 <b>Vale revisar.</b> Conserte o que faltou e clique em "Quero reescrever".</div>'; }
+  else { reg.status='ok'; el.innerHTML='<div class="modelo">✅ <b>Resposta aprovada pelo Biscoito! Au-au!</b></div>'; if(!reg.pontuado){ reg.pontuado=true; G.acertos++; } }
+  save(); g_next();
+}
+function escReescrever(){
+  var reg=S.escrita[G.escItem.id]; if(reg&&reg.contado&&!reg.pontuado){ reg.contado=false; G.total--; }
+  if(reg&&reg.pontuado){ reg.pontuado=false; reg.contado=false; G.acertos--; G.total--; }
+  document.getElementById('wchk').disabled=false; document.getElementById('wdepois').innerHTML='';
+  nextBtn().style.display='none'; document.getElementById('wtxt').focus();
+  G.tentativa=1;
+}
+
+/* =========================================================
+   FIM DE PARADA
+   ========================================================= */
+function winFase(p,acertos,total){
+  var ant=S.fases[p]||{};
+  S.fases[p]={feita:true, concluido:true, concluidoEm:ant.concluidoEm||new Date().toISOString(),
+              acertos:acertos, total:total, melhor:Math.max(acertos,ant.melhor||0), vezes:(ant.vezes||0)+1};
+  save(); confetti(34);
+  var pc=total?Math.round(acertos*100/total):0;
+  var msg='Você terminou <b>'+TITULOS[p]+'</b> com <b>'+acertos+'</b> de <b>'+total+'</b>.<br>';
+  msg+= pc>=80 ? 'Uhuu! Parada perfeita! 🏅' : (pc>=50 ? 'Muito bem! Se quiser, refaça esta parada depois para fixar. 💪' : 'Você chegou até o fim, que é o mais importante! Vale repetir esta parada mais tarde. 🤗');
+  msg+='<br><br>⭐ Você ganhou um <b>adesivo</b> para a sua mochila!';
+  var prox=p;
+  msg+= prox<=5 ? '<br>🔓 Destravou: <b>'+TITULOS[prox+1]+'</b>.' : '<br>🔓 Destravou: <b>🗺️ Cartaz do Caminho</b>.';
+  document.getElementById('wonMsg').innerHTML=msg;
+  var bt=document.getElementById('wonNext');
+  bt.textContent = prox<=5 ? ('Próxima parada: '+TITULOS[prox+1]+' ➡️') : 'Ler o Cartaz do Caminho ➡️';
+  bt.onclick=function(){ openStep(prox); };
+  go('scr-won');
+}
+
+/* =========================================================
+   MURAL (cartaz) — concluído ao rolar até o fim + botão
+   ========================================================= */
+function abrirMural(){
+  go('scr-mural'); atualizarBotaoMural();
+}
+function checarRolagem(){
+  if(!document.getElementById('scr-mural').classList.contains('on')) return;
+  var doc=document.documentElement, alto=Math.max(doc.scrollHeight,document.body.scrollHeight);
+  var pct=Math.min(100,Math.round(((window.scrollY||doc.scrollTop)+window.innerHeight)*100/alto));
+  if(pct>(S.mural.maxPct||0)){ S.mural.maxPct=pct; if(pct>=90) save(); }
+  atualizarBotaoMural();
+}
+function atualizarBotaoMural(){
+  var b=document.getElementById('btnLiMural'), pr=document.getElementById('btnProntoFinal'), hint=document.getElementById('muralHint');
+  if(S.mural.concluido){ b.disabled=true; b.textContent='✅ Cartaz lido até o fim'; pr.style.display='block'; hint.textContent='Muito bem! O Desafio Final está destravado.'; return; }
+  b.disabled=(S.mural.maxPct||0)<90;
+  hint.textContent=b.disabled?'O botão acende quando você rolar até o fim do cartaz.':'Pode clicar!';
+}
+window.addEventListener('scroll',checarRolagem,{passive:true});
+function concluirMural(){
+  if((S.mural.maxPct||0)<90) return;
+  S.mural.concluido=true; S.mural.concluidoEm=new Date().toISOString(); save(); confetti(30);
+  atualizarBotaoMural();
+}
+
+/* =========================================================
+   DESAFIO FINAL
+   ========================================================= */
+function startFinal(){
+  if(!aberta(7)){ modal('🔒 Ainda não',fraseTrava(7).replace('🔒 ','')); return; }
+  G={p:'F', idx:0, acertos:0, det:[], ordem:shuffleSeeded(FINAL.map(function(_,i){return i;}),'finalq'+SEMENTE)};
+  document.getElementById('gameTitle').textContent='🏆 Desafio Final';
+  go('scr-game'); f_render();
+}
+function f_render(){
+  clearFb(); nextBtn().style.display='none';
+  var q=FINAL[G.ordem[G.idx]];
+  setCount('Questão '+(G.idx+1)+' de '+FINAL.length+' · ⭐ '+G.acertos);
+  renderMC(q,'fin'+G.ordem[G.idx]+SEMENTE,function(btn,oi){
+    var ok=markMC(btn,oi,q); if(ok) G.acertos++;
+    G.det.push({q:q.p.replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim(),marcou:q.o[oi],certa:q.o[q.c],ok:ok});
+    nextBtn().style.display='block';
+    nextBtn().textContent=(G.idx===FINAL.length-1)?'Ver o resultado 🏆':'Continuar ➡️';
+    nextBtn().onclick=function(){ if(G.idx<FINAL.length-1){ G.idx++; f_render(); window.scrollTo(0,0); } else f_end(); };
+  });
+}
+function f_end(){
+  S.finalScore=G.acertos; S.finalDet=G.det;
+  S.finalCode='SIM-'+(G.acertos<10?'0':'')+G.acertos+'-'+S.codeLetters;
+  S.finalConc=true; if(!S.finalEm) S.finalEm=new Date().toISOString();
+  save(); confetti(60);
+  document.getElementById('fimScore').textContent='Você acertou '+G.acertos+' de '+FINAL.length+'!';
+  var pc=Math.round(G.acertos*100/FINAL.length), m;
+  if(pc>=90) m='Caminho completo! Você está prontíssima(o) para a avaliação. 🥇';
+  else if(pc>=70) m='Muito bom! Dê mais uma lida no Cartaz do Caminho e fica craque. 👏';
+  else if(pc>=50) m='Bom trabalho! Refaça as paradas em que teve dúvida. 💪';
+  else m='Você chegou até o fim, isso é o que vale! Vamos repetir as paradas com um adulto. 🤗';
+  document.getElementById('fimMsg').textContent=m;
+  document.getElementById('fimCode').textContent=S.finalCode;
+  go('scr-fim');
+}
+
+/* =========================================================
+   ÁREA DOS PAIS
+   ========================================================= */
+function codigoValido(){
+  var code=(document.getElementById('paisCode').value||'').trim().toUpperCase();
+  return code==='PAIS-77' || (S.finalCode && code===S.finalCode);
+}
+function abrirRelatorio(){
+  if(!codigoValido()){ modal('🔒 Código não confere','Digite <b>PAIS-77</b> (código fixo da família) ou o código <b>SIM-XX-YY</b> que apareceu no fim do Desafio Final.'); return; }
+  renderTrilhaPais(); renderRelatorio();
+}
+function renderTrilhaPais(){
+  document.getElementById('paisTrilha').innerHTML = T.liberadoPelosPais
+    ? '<div class="paisbox">🔓 Trilha liberada pelos pais em '+dataBR(T.liberadoEm)+'.<button class="btn ghost small" onclick="trancarDeNovo()">🔒 Trancar de novo</button></div>'
+    : '<button class="btn yellow small" onclick="liberarTrilha()">🔓 Liberar todos os materiais</button><p class="menu-desc" style="margin:0;">Use quando a criança estudou de outro jeito ou trocou de aparelho.</p>';
+}
+function liberarTrilha(){
+  if(!codigoValido()) return;
+  T.liberadoPelosPais=true; T.liberadoEm=new Date().toISOString(); saveT();
+  renderTrilhaPais(); renderRelatorio(); refreshMenu();
+  modal('🔓 Trilha liberada','Todos os materiais estão abertos. No menu aparece o selo "Trilha liberada pelos pais".');
+}
+function trancarDeNovo(){
+  T.liberadoPelosPais=false; T.trancadoEm=new Date().toISOString(); saveT();
+  refreshMenu(); if(document.getElementById('paisReport').innerHTML){ renderTrilhaPais(); renderRelatorio(); }
+}
+function renderRelatorio(){
+  var h='', i;
+  h+='<h3 style="margin-top:14px;">🛤️ Trilha</h3><table class="tbl"><tr><th>Etapa</th><th>Situação</th></tr>';
+  for(i=0;i<ETAPAS.length;i++){
+    h+='<tr><td>'+ETAPAS[i].nome+'</td><td>'+(feita(i)?'✅ concluída em '+dataBR(quandoFeita(i)):'⬜ ainda não')+'</td></tr>';
+  }
+  h+='</table><p style="font-size:.9rem;font-weight:700;">'+(T.liberadoPelosPais?'🔓 Trilha liberada pelos pais em '+dataBR(T.liberadoEm)+'.':'Trilha seguindo a ordem normal (não liberada pelos pais).')+'</p>';
+  h+='<h3>🎒 Paradas</h3><table class="tbl"><tr><th>Parada</th><th>Última vez</th><th>Melhor</th></tr>';
+  for(i=1;i<=6;i++){ var f=S.fases[i];
+    h+='<tr><td>'+TITULOS[i]+'</td><td>'+(f&&f.concluido?(f.acertos+' de '+f.total):'não fez')+'</td><td>'+(f&&f.concluido?f.melhor:'—')+'</td></tr>'; }
+  h+='</table>';
+  h+='<p style="font-size:.9rem;font-weight:700;">🗺️ Cartaz: rolou até '+(S.mural.maxPct||0)+'% da página'+(S.mural.concluido?' e marcou "li até o fim".':'.')+'</p>';
+  h+='<h3>✏️ O que a criança escreveu (Rua do Antes e Agora)</h3>';
+  var tem=false, lista=JOGO[3];
+  for(i=0;i<lista.length;i++){ var it=lista[i]; if(it.t!=='esc') continue; var reg=S.escrita[it.id]; if(!reg||!reg.resp) continue; tem=true;
+    h+='<div class="wbox'+(reg.transcrita?' red':'')+'"><h4>'+it.tit+'</h4><p style="font-weight:600;font-size:.94rem;">'+esc(reg.resp)+'</p>';
+    if(reg.transcrita) h+='<div class="redflag">🔴 Para revisar: ficou muito parecida com o enunciado (cópia do texto).</div>';
+    var nao=[], j; for(j=0;j<it.chk.length;j++){ if(reg.chk&&reg.chk[j]===0) nao.push(it.chk[j]); }
+    if(nao.length) h+='<div class="warn">Marcou "ainda não" em:<br>• '+nao.join('<br>• ')+'</div>';
+    if(reg.tentou && reg.tentou!==reg.resp) h+='<p style="font-size:.85rem;color:#7C7889;"><b>1ª tentativa (era cópia):</b> '+esc(reg.tentou)+'</p>';
+    h+='<p style="font-size:.85rem;"><b>Modelo:</b> '+it.modelo+'</p></div>'; }
+  if(!tem) h+='<p style="font-weight:700;">Ainda não escreveu nada.</p>';
+  h+='<h3>🏆 Desafio Final</h3>';
+  if(S.finalScore===null||S.finalScore===undefined) h+='<p style="font-weight:700;">Ainda não fez o Desafio Final.</p>';
+  else{
+    h+='<p style="font-weight:800;">Nota: '+S.finalScore+' de '+FINAL.length+' · Código: <b>'+S.finalCode+'</b></p><table class="tbl"><tr><th>Questão</th><th>Marcou</th><th>Certa</th></tr>';
+    for(i=0;i<S.finalDet.length;i++){ var d=S.finalDet[i]; h+='<tr><td>'+(d.ok?'✅':'❌')+' '+d.q+'</td><td>'+d.marcou+'</td><td><b>'+d.certa+'</b></td></tr>'; }
+    h+='</table>';
+  }
+  h+='<h3>📖 Gabarito comentado do Desafio Final</h3>';
+  for(i=0;i<FINAL.length;i++){ var q=FINAL[i];
+    h+='<div class="wbox"><div style="font-weight:800;margin:0 0 6px;">'+(i+1)+'. '+q.p+'</div>';
+    for(var k=0;k<q.o.length;k++){
+      if(k===q.c) h+='<div style="background:#E2F4EA;border:2px solid #3FA34D;border-radius:10px;padding:6px 9px;margin:4px 0;font-weight:800;">✅ '+q.o[k]+'</div>';
+      else h+='<div style="background:#F1EFF3;border:2px solid #DAD7DF;border-radius:10px;padding:6px 9px;margin:4px 0;color:#6C6878;font-weight:700;">'+q.o[k]+(q.ex&&q.ex[k]?' — <i>'+q.ex[k]+'</i>':'')+'</div>';
+    }
+    h+='</div>'; }
+  h+='<h3>📚 Pontos de atenção (pegadinhas do conteúdo)</h3><ul style="font-weight:700;font-size:.92rem;">'+
+     '<li>Parque e museu são espaços de lazer: a resposta é só "Sim" (no livro, p. 110, foram marcados Sim e Não).</li>'+
+     '<li>"Prestar atenção nas aulas e fazer as atividades são deveres de todos os estudantes" é VERDADEIRO (no livro, p. 124, foi marcado F).</li>'+
+     '<li>"Sair da sala a qualquer momento sem pedir autorização" é FALSO (ficou em branco na p. 124).</li>'+
+     '<li>No boletim antigo aparecem nome do estudante, nome da escola, nomes dos componentes e notas (na p. 117 foi marcado só o nome).</li>'+
+     '<li>Na p. 125, com o quadro de palavras, quem prepara as refeições é o MERENDEIRO (foi escrito "cozinheiro").</li>'+
+     '<li>"Tombado": o Armandinho entendeu "derrubado", mas o significado correto é "preservado".</li>'+
+     '<li>O comunicado também pede os registros do caderno, que não vieram para este kit.</li></ul>';
+  document.getElementById('paisReport').innerHTML=h;
+}
+
+/* =========================================================
+   BACKUP
+   ========================================================= */
+function exportar(){
+  document.getElementById('backupBox').value=JSON.stringify({kit:'bairro_escola_2ano',exportadoEm:new Date().toISOString(),estado:S,trilha:T});
+  modal('📥 Pronto','O código do backup apareceu na caixinha. Copie e guarde (pode mandar por mensagem para outro aparelho).');
+}
+function importar(){
+  var v=document.getElementById('backupBox').value.trim();
+  if(!v){ modal('🤔 Caixinha vazia','Cole o código do backup na caixinha antes de importar.'); return; }
+  modal('📤 Importar','Isso vai <b>substituir</b> o progresso deste aparelho. Continuar?',function(){
+    try{ var o=JSON.parse(v); if(!o||typeof o!=='object') throw 0;
+      if(o.estado){ S=arrumar(o.estado); if(o.trilha){ T=o.trilha; saveT(); } } else S=arrumar(o);
+      save(); refreshMenu(); modal('✅ Importado','O progresso foi restaurado neste aparelho.');
+    }catch(e){ modal('❌ Não deu','Esse código de backup não parece válido. Confira se copiou tudo.'); }
+  },true);
+}
+function zerar(){
+  modal('🗑️ Zerar tudo','Isso apaga <b>todo</b> o progresso deste aparelho (inclusive a trilha) e não dá para desfazer. Continuar?',function(){
+    lsDel(KEY); lsDel(TKEY); S=arrumar(novoEstado()); T={liberadoPelosPais:false,liberadoEm:null};
+    document.getElementById('paisReport').innerHTML=''; document.getElementById('paisTrilha').innerHTML='';
+    document.getElementById('backupBox').value=''; refreshMenu(); go('scr-menu');
+  },true);
+}
+
+/* ---------- arranque ---------- */
+refreshMenu();
+</script>
+</body>
+</html>
